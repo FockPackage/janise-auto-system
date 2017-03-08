@@ -1,0 +1,51 @@
+<div class="md-groupsort">
+  {{#common-ui/mobi-listview mobiConfig=mobiConfig}}
+    {{#each dateFinances as |dateFinance|}}
+      <li data-role="list-divider">{{dateFinance.date}}</li>
+
+      {{#each dateFinance.finances as |finance|}}
+        <li data-id={{finance.id}}>
+          <img src={{finance.carRelation.defaultImgSrc}} /> {{finance.label}}
+          <p>订单编号： {{finance.orderCode}}</p>
+          <p>客户姓名： {{finance.custom.customName}}</p>
+          <p>手机号： {{finance.custom.mobile}}</p>
+          <p>合同状态：{{finance.status}}</p>
+
+          <ul>
+            <div class="mbsc-form-group" mbsc-enhance>
+              <div>
+                <label for="salePrice">定金：</label>
+                <input
+                  id={{concat "deposit-" finance.id}}
+                  type="number"
+                  data-role="stepper"
+                  min="0"
+                  value={{finance.deposit}}
+                  step="1000"
+                  max="10000000000"
+                  disabled={{gt finance.orderStatus 3}}
+                />
+                {{common-ui/mobi-numpad
+                  hasPrefix=true
+                  bindId=(concat "#deposit-" finance.id)
+                  value=finance.deposit
+                }}
+              </div>
+
+              <div class="mbsc-btn-group" mbsc-enhance>
+                <button id="test" class="mbsc-btn-block" disabled={{gt finance.orderStatus 4}} onclick={{goToSummary}}>已付全款</button>
+              </div>
+            </div>
+          </ul>
+        </li>
+      {{/each}}
+    {{/each}}
+  {{/common-ui/mobi-listview}}
+</div>
+
+{{#common-ui/mobi-widget mobiConfig=mobiWidgetConfig bindId="#test"}}
+  <div class="md-dialog">
+    <h3 class="md-text-center">Hi</h3>
+    <p class="md-text-center">Are you feeling good today?</p>
+  </div>
+{{/common-ui/mobi-widget}}

@@ -1,0 +1,16 @@
+<div class="swiper-container vehicles-swiper">
+  <div class="swiper-wrapper">
+    {{#each vehicles as |vehicle|}}
+      <div class="swiper-slide">
+        {{common-ui/vehicles-slide/vehicle
+          vehicle
+          type="radio"
+          class="vehicles-item"
+          selectedVehicle=selectedVehicle
+          toggleSelectVehicle=toggleSelectVehicle
+        }}
+      </div>
+    {{/each}}
+  </div>
+  <div class="swiper-pagination vehicles-pagination"></div>
+</div>

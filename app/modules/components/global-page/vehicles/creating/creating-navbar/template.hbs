@@ -1,0 +1,25 @@
+<div local-class="creating-navbar">
+  <ul local-class="navbar-main">
+    <li>
+      {{#link-to "global.vehicles.creating.index" tagName="a" activeClass="active"}}
+        <span>Vehicles</span>
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "global.vehicles.creating.color" tagName="a"}}
+        <span>Color</span>
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "global.vehicles.creating.trims" tagName="a"}}
+        <span>Trims</span>
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to "global.vehicles.creating.mpgs" tagName="a"}}
+        <span>MPGs</span>
+      {{/link-to}}
+    </li>
+  </ul>
+  {{ui-button "Create" icon="more" color="cadillac-red"}}
+</div>

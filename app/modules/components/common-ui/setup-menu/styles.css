@@ -1,0 +1,39 @@
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
+
+.floating {
+  position: absolute;
+  white-space: nowrap;
+  line-height: 20px;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  color: ui-white;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background-color: ui-slate;
+  box-shadow: color(black a(30%)) 0 3px 8px 0;
+  transition: opacity 200ms ease;
+
+  & > li {
+    display: inline-block;
+    padding: 0 8px;
+    font-size: small;
+    cursor: pointer;
+    transition: opacity 200ms ease;
+
+    &:hover {
+      color: ui-blue;
+    }
+
+    &:first-child {
+      color: ui-gray;
+      font-size: 12px;
+      padding: 0;
+      cursor: default;
+    }
+  }
+}
+
+:global(.setup) {
+  position: absolute 0 0 0 auto;
+}

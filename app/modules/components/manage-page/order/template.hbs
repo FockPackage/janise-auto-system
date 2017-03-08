@@ -1,0 +1,125 @@
+{{!-- <div local-class="order-manage">
+  <h2>Order Manage</h2>
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <div class="list-title">
+        {{common-ui/search-input currentSearchType=currentSearchType onSearch=searchOrder}}
+        {{common-ui/search-type-menu
+          class="menu"
+          searchTypes=searchTypes
+          currentSearchType=currentSearchType
+          changeSearchType=changeSearchType
+        }}
+      </div>
+      <ul>
+        {{#each unreadOrders as |order|}}
+          {{common-ui/ui-list
+            preview=true
+            notification=true
+            status="active"
+            vehicles=order.carRelation.defaultImgSrc
+            label=order.label
+            tag=order.carRelation.carType.meaning
+            tagTrims=order.carRelation.carConfig.meaning
+            serial=(concat "订单编号：" order.orderCode)
+            price=order.allOfficalPrice
+            netPrice=order.allNetPrice
+            client=order.custom.customName
+            phone=order.custom.mobile
+            onPreviewClick=(action openPreview order)
+            onNotificationClick=(action showNotification)
+          }}
+
+          {{else}}
+            <p>搜索内容为空</p>
+          {{/each}}
+      </ul>
+    </div>
+
+    <div class="list-wrapper">
+      {{#each dateOrders as |dateOrder|}}
+        <div class="list-title">
+          <span>{{dateOrder.date}}</span>
+        </div>
+        <ul>
+          {{#each dateOrder.orders as |order|}}
+            {{common-ui/ui-list
+              preview=true
+              vehicles=order.carRelation.defaultImgSrc
+              label=order.label
+              tag=order.carRelation.carType.meaning
+              tagTrims=order.carRelation.carConfig.meaning
+              serial=(concat "订单编号：" order.orderCode)
+              price=order.allOfficalPrice
+              netPrice=order.allNetPrice
+              client=order.custom.customName
+              phone=order.custom.mobile
+              onPreviewClick=(action openPreview order)
+            }}
+          {{/each}}
+        </ul>
+      {{/each}}
+    </div>
+  </div>
+  <div class="button-wrapper contents-wrapper">
+    {{#link-to 'sales.trims' tagName="button" type="button" class="cadillac-red button"}}
+      {{ui-icon icon="ui-simple-add"}} Create New
+    {{/link-to}}
+  </div>
+</div> --}}
+
+<div local-class="order-manage">
+  <h2>Order Manage</h2>
+
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <div class="list-title">
+        {{common-ui/search-input currentSearchType=currentSearchType onSearch=searchOrder}}
+        {{common-ui/search-type-menu
+          class="menu"
+          searchTypes=searchTypes
+          currentSearchType=currentSearchType
+          changeSearchType=changeSearchType
+        }}
+      </div>
+
+      {{#common-ui/mobi-listview mobiActions=mobiActions mobiStages=mobiStages}}
+        {{#each unreadOrders as |order|}}
+          <li>
+            <h3>{{order.label}}</h3>
+            <p>{{order.carRelation.carType.meaning}} {{order.carRelation.carConfig.meaning}}</p>
+            <p>订单编号： {{order.orderCode}}</p>
+            <p>客户姓名： {{order.customName}}</p>
+            <p>手机号： {{order.mobile}}</p>
+          </li>
+        {{else}}
+          <p>搜索内容为空</p>
+        {{/each}}
+      {{/common-ui/mobi-listview}}
+    </div>
+
+    <div class="list-wrapper">
+      {{#each dateOrders as |dateOrder|}}
+        <div class="list-title">
+          <span>{{dateOrder.date}}</span>
+        </div>
+        {{#common-ui/mobi-listview mobiActions=mobiActions mobiStages=mobiStages}}
+          {{#each dateOrder.orders as |order|}}
+            <li>
+              <h3>{{order.label}}</h3>
+              <p>{{order.carRelation.carType.meaning}} {{order.carRelation.carConfig.meaning}}</p>
+              <p>订单编号： {{order.orderCode}}</p>
+              <p>客户姓名： {{order.customName}}</p>
+              <p>手机号： {{order.mobile}}</p>
+            </li>
+          {{/each}}
+        {{/common-ui/mobi-listview}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="button-wrapper contents-wrapper">
+    {{#link-to 'sales.trims' tagName="button" type="button" class="cadillac-red button"}}
+      {{ui-icon icon="ui-simple-add"}} Create New
+    {{/link-to}}
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="list-contents">
+  <div class="list-wrapper">
+    <h3>Interior Options</h3>
+    <ul>
+      {{#each interiors as |interior|}}
+        {{common-ui/ui-list
+          check=true
+          type="checkbox"
+          spinner=interior.checked
+          spinnerValue=interior.count
+          info=true
+          labelId=(concat "interior-" interior.id)
+          vehicles=interior.defaultImgSrc
+          label=interior.fitName
+          price=interior.costPrice
+          checked=interior.checked
+          onClick=(action "toggleAccessory" interior.id interior.costPrice)
+          onEditClick=(action "togglePopup" "setAccessoryCount" interior)
+          onSpinnerInput=(action "test" interior.id)
+        }}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+{{#if isShow.setAccessoryCount}}
+  {{common-ui/mobi-numpad
+    onSet=(action "setAccessoryCount")
+    onClose=(action "togglePopup" "setAccessoryCount")
+  }}
+{{/if}}

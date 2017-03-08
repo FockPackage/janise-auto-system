@@ -1,0 +1,71 @@
+<div class="list-contents">
+  <div class="list-wrapper">
+    <h3>Wheels</h3>
+    <ul>
+      {{common-ui/ui-list
+        check=true
+        spinner=true
+        info=true
+        type="radio"
+        labelId=(concat "wheel-" defaultWheel.id)
+        vehicles=defaultWheel.defaultImgSrc
+        label=defaultWheel.meaning
+        checked=selectedDefaultWheel
+        onClick=(action toggleWheel defaultWheel.id true)
+      }}
+    </ul>
+  </div>
+
+  {{#if wheels}}
+    <div class="list-wrapper">
+      <ul>
+        {{#each wheels as |wheel|}}
+          {{common-ui/ui-list
+            check=true
+            spinner=true
+            info=true
+            type="checkbox"
+            labelId=(concat "wheel-" wheel.id)
+            vehicles=wheel.defaultImgSrc
+            label=wheel.fitName
+            checked=(eq selectedWheelId wheel.id)
+            price="$342"
+            onClick=(action toggleWheel wheel.id false wheel.costPrice)
+          }}
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+
+  {{#if exteriors}}
+    <div class="list-wrapper">
+      <h3>Exterior Options</h3>
+      <ul>
+        {{#each exteriors as |exterior|}}
+          {{common-ui/ui-list
+            check=true
+            spinner=exterior.checked
+            spinnerValue=exterior.count
+            info=true
+            type="checkbox"
+            labelId=(concat "exterior-" exterior.id)
+            vehicles=exterior.defaultImgSrc
+            label=exterior.fitName
+            checked=exterior.checked
+            price=exterior.costPrice
+            onClick=(action "toggleAccessory" exterior.id "exteriors" exterior.costPrice)
+            onEditClick=(action "togglePopup" "setAccessoryCount" exterior)
+            onSpinnerInput=(action "test" exterior.id)
+          }}
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+</div>
+
+{{#if isShow.setAccessoryCount}}
+  {{common-ui/mobi-numpad
+    onSet=(action "setAccessoryCount")
+    onClose=(action "togglePopup" "setAccessoryCount")
+  }}
+{{/if}}

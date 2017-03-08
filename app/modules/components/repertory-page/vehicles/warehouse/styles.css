@@ -1,0 +1,14 @@
+.vehicles-warehouse {
+  padding-top: 2rem;
+  & > h2 {
+    margin-bottom: 2rem;
+  }
+  & .vin {
+    width: 100%;
+  }
+  & .comment {
+    max-width: 100%;
+    min-width: 100%;
+    height: 6rem;
+  }
+}

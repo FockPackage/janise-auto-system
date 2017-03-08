@@ -1,0 +1,49 @@
+@value ui-white, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, cadillac-red from 'ui-colors';
+
+.summary {
+  padding-top: 2rem;
+  & > h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.net-price {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid ui-light;
+}
+
+.total-wrapper {
+  & .total {
+    background-color: ui-white;
+    & span {
+      float: right;
+    }
+  }
+  & > div {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid ui-silver;
+  }
+  & .finance {
+    background-color: ui-light;
+    & .finance-title {
+      display: flex;
+      align-items: center;
+      & h4 {
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+      & a {
+        margin-left: auto;
+      }
+    }
+    & h1 {
+      font-weight: 200;
+      & span {
+        font-size: small;
+        margin-left: .5rem;
+      }
+    }
+  }
+}

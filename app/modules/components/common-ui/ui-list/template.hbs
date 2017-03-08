@@ -1,0 +1,194 @@
+{{#if check}}
+  <input type={{type}} id={{labelId}} onclick={{onClick}} checked={{checked}}>
+{{/if}}
+
+<div local-class="wrapper" class={{disabled}}>
+  {{#if status}}
+    <div local-class="notification-light">
+      {{ui-icon icon="min-prompt" size="12px" viewBox="12"}}
+    </div>
+  {{/if}}
+  <!--Sales Profile-->
+  {{#if sales}}
+    <div local-class="profile">
+      <i style="background-image: url({{sales}})"></i>
+    </div>
+  {{/if}}
+  <!--Vehicles Picture-->
+  {{#if vehicles}}
+    <img src={{vehicles}} alt={{alt}}>
+  {{/if}}
+
+  <div class={{slide}}>
+    <div class="swiper-wrapper">
+      <!--Slide One-->
+      <label class={{concat "swiper-slide " module}} for={{labelId}}>
+        <div local-class="label-wrapper">
+          {{#if warehouse}}
+            <h4>入库日期:<span>{{warehouse}}</span></h4>
+          {{/if}}
+          {{#if vehiclesID}}
+            <h4>ID:<span>{{vehiclesID}}</span></h4>
+          {{/if}}
+          {{#if accessoriesID}}
+            <h4>Accessories ID:<span>{{accessoriesID}}</span></h4>
+          {{/if}}
+          <!--Label-->
+          {{#if label}}
+            <span local-class="label">{{label}}</span>
+          {{/if}}
+          <!--Client-->
+          {{#if client}}
+            <div local-class="info">
+              <h4>Client:<span>{{client}}</span></h4>
+              <h4>Phone:<span>{{phone}}</span></h4>
+            </div>
+          {{/if}}
+          <!--Serial-->
+          {{#if serial}}
+            <span local-class="serial">{{serial}}</span>
+          {{/if}}
+          <!--VIN-->
+          {{#if vin}}
+            <h4 local-class="vin">车辆识别码:<span>{{vin}}</span></h4>
+          {{/if}}
+
+          {{#if stock}}
+            <div local-class="stock">
+              <h4>Stock:<span>{{stock}}</span> / <span>{{deliveryComputed}}</span></h4>
+              {{!-- <h4>Storage:<span>{{storage}}</span></h4> --}}
+            </div>
+          {{/if}}
+
+          {{#if tag}}
+            <div local-class="tag">
+              <h5>{{tag}}<span>{{tagTrims}}</span></h5>
+            </div>
+          {{/if}}
+        </div>
+
+        {{#if standardPrice}}
+          <div local-class="price-setting">
+            <h4>Cost:<span>{{costPrice}}</span></h4>
+            <h4>Special:<span>{{specialPrice}}</span></h4>
+            <h4>Standard:<span>{{standardPrice}}</span></h4>
+            <h4>Sale:<span>{{salePrice}}</span></h4>
+          </div>
+        {{/if}}
+      </label>
+      <!--Slide Two-->
+      <div class="swiper-slide">
+        <!--Appointment-->
+        {{#if (or email address)}}
+          <div local-class="info">
+            <h4>Email:<span>{{email}}</span></h4>
+            <h4>Address:<span>{{address}}</span></h4>
+          </div>
+        {{/if}}
+        <!--Contact-->
+        {{#if contact}}
+          <div local-class="info">
+            <h4>Client:<span>{{contact}}</span></h4>
+            <h4>Phone:<span>{{tel}}</span></h4>
+            <h4>E-Mail:<span>{{mail}}</span></h4>
+          </div>
+        {{/if}}
+        <!--Price-->
+        {{#if (or price netPrice)}}
+          <div local-class="info">
+            {{#if price}}
+              <h4>Price:<span>{{price}}</span></h4>
+            {{/if}}
+            {{#if netPrice}}
+              <h4>Net Price:<span>{{netPrice}}</span></h4>
+            {{/if}}
+          </div>
+        {{/if}}
+        <!--comment-->
+        {{#if comment}}
+          <span local-class="info">{{comment}}</span>
+        {{/if}}
+        <!--handle-->
+        {{#unless disabled}}
+          {{#if (or spinner notification chat prices preview edit setting trash info delivery)}}
+            <div local-class="handle">
+              {{#if onAllowableToggle}}
+                {{ui-switch
+                  size="xl"
+                  label="允许出库:"
+                  toggle=allowableToggle
+                  onToggle=onAllowableToggle
+                }}
+              {{/if}}
+              {{#if spinner}}
+                <div class="ui-fieldset" local-class="spinner">
+                  <div class="field-control xl column ui-spinner">
+                    {{common-ui/spinner value=spinnerValue min="1" max="10000" step=1 onInput=onSpinnerInput}}
+                  </div>
+                </div>
+              {{/if}}
+              {{#if notification}}
+                {{ui-icon-button icon="ui-notification" color="border" class=status  onClick=onNotificationClick}}
+              {{/if}}
+              {{#if chat}}
+                {{ui-icon-button icon="chat" color="border"}}
+              {{/if}}
+              {{#if prices}}
+                {{ui-icon-button icon="files-import" color="border"}}
+              {{/if}}
+              {{#if preview}}
+                {{ui-icon-button
+                  icon="eye"
+                  color="border"
+                  onClick=onPreviewClick
+                }}
+              {{/if}}
+              {{#if edit}}
+                {{ui-icon-button
+                  id=edit
+                  icon="ui-pencil"
+                  color="border"
+                  onClick=onEditClick
+                }}
+              {{/if}}
+              {{#if setting}}
+                {{ui-icon-button
+                  icon="ui-settings-gear"
+                  color="border"
+                  onClick=onSettingClick
+                }}
+              {{/if}}
+              {{#if trash}}
+                {{ui-icon-button
+                  icon="trash-solid"
+                  color="border"
+                  onClick=onTrashClick
+                }}
+              {{/if}}
+              {{#if delivery}}
+                {{ui-icon-button icon="delivery" color="border" onClick=onDeliveryClick}}
+              {{/if}}
+              {{#if info}}
+                {{ui-icon-button icon="ui-round-e-info"}}
+              {{/if}}
+            </div>
+          {{/if}}
+        {{/unless}}
+      </div>
+    </div>
+  </div>
+  <!--Finance Schedule-->
+  {{#if finance}}
+    <div local-class="schedule" class={{schedule}}>
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  {{/if}}
+  <!--Check-->
+  {{#if check}}
+    <div local-class="check">
+      {{ui-icon icon="ui-check"}}
+    </div>
+  {{/if}}
+</div>

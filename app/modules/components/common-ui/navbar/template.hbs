@@ -1,0 +1,30 @@
+<div local-class="navbar-main">
+  {{#link-to "manage" tagName="a"}}
+    <img src="/images/Cadillac-logo.png" alt="">
+  {{/link-to}}
+  <span>{{t "login.welcome-back"}}</span>
+  {{#basic-dropdown as |dropdown|}}
+    {{#dropdown.trigger}}
+      {{ui-button "Account" color="blank" expand=true}}
+    {{/dropdown.trigger}}
+    {{#dropdown.content}}
+      <div class="option">
+        <ul class="option-contents">
+          <li>
+            <a>
+              {{ui-icon icon="ui-settings-gear"}}
+              <span>Account Settings</span>
+            </a>
+          </li>
+          <li onclick={{pipe logout dropdown.actions.close}}>
+            <a>
+              {{ui-icon icon="media-button-power"}}
+              <span>{{t "login.signout"}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    {{/dropdown.content}}
+  {{/basic-dropdown}}
+
+</div>

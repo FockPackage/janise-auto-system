@@ -1,0 +1,132 @@
+<div local-class="accessories-warehouse">
+  <h2>Warehouse Accessories</h2>
+
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <h3>Accessories ID</h3>
+      {{input
+        local-class="vim"
+        type="text"
+        value=formValue.fitCode
+        focus-out=(action searchAccessory formValue.fitCode)
+        disabled=(and formValue.canEdit formValue.id)
+      }}
+    </div>
+    <div class="list-wrapper">
+      <h3>Accessories Name</h3>
+      {{input
+        local-class="vim"
+        type="text"
+        value=formValue.fitName
+      }}
+    </div>
+    <div class="list-wrapper-column">
+      <div class="list-wrapper">
+        <h3>Vehicles</h3>
+        <ul>
+          {{#each carTypesComputed as |carType|}}
+            {{common-ui/ui-list
+              module="repertory"
+              check=true
+              type="checkbox"
+              slide="swiper-disabled"
+              labelId=(concat "catType-" carType.id)
+              vehicles=carType.defaultImgSrc
+              label=carType.meaning
+              checked=(eq carType.meaning formValue.carTypeMeaning)
+              onClick=(action toggleSelect "carTypeMeanings" carType.meaning)
+              tag=carType.meaning
+              tagTrims=carType.tagTrims
+            }}
+          {{/each}}
+        </ul>
+      </div>
+      <div class="list-wrapper">
+        <h3>TRIMS</h3>
+        <ul>
+          {{common-ui/ui-list
+            check=true
+            type="checkbox"
+            slide="swiper-disabled"
+            labelId=(concat "config-" 0)
+            label="ALL TRIMS"
+            checked=(eq 0 formValue.configId)
+            onClick=(action toggleSelect "configIds" "0" formValue.isNew)
+          }}
+          {{#each configs as |config|}}
+            {{common-ui/ui-list
+              check=true
+              type="checkbox"
+              slide="swiper-disabled"
+              labelId=(concat "config-" config.carConfigId)
+              label=config.carConfig.meaning
+              checked=config.checked
+              onClick=(action toggleSelect "configMeanings" config.carConfig.meaning formValue.isNew)
+            }}
+          {{/each}}
+        </ul>
+        <div local-class="upload">
+          <h3>UPLOAD PICTURE</h3>
+          <div local-class="upload-wrapper">
+            <img src="/images/Unknown.svg" alt="">
+            <div local-class="mod">
+              <span>You can upload images up to 256x256. Your avatar shows up in your public profile and your team notifications.</span>
+              {{ui-button "UPLOAD PICTURE" color="border" icon="arrows-cloud-upload"}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-wrapper">
+      {{#if formValue.isNew}}
+        <h3>New</h3>
+        <ul>
+          {{common-ui/ui-list
+            module="repertory"
+            check=true
+            type="checkbox"
+            edit="accessory-new"
+            spinner=true
+            spinnerValue=formValue.fitNumber
+            vehicles="/images/accessories/300/2017-ct6-accessories-cargo_organizer-300x276.jpg"
+            accessoriesID=formValue.fitCode
+            label=formValue.fitName
+          }}
+        </ul>
+      {{/if}}
+
+      <h3>Listed</h3>
+      <ul>
+        {{#each formValue.list as |accessory|}}
+          {{common-ui/ui-list
+            module="repertory"
+            check=true
+            type="checkbox"
+            spinner=true
+            allowableToggle=(not accessory.closeStatus)
+            edit=(concat "accessory-" accessory.id)
+            spinnerValue=accessory.fitNumber
+            vehicles="/images/accessories/300/2017-ct6-accessories-cargo_organizer-300x276.jpg"
+            accessoriesID=accessory.fitCode
+            label=formValue.fitName
+            onAllowableToggle=(action toggleAllowable accessory.id accessory.closeStatus)
+          }}
+        {{else}}
+          <p>没有历史记录</p>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="list-wrapper">
+      <h3>Comment</h3>
+      {{textarea
+        cols="30"
+        rows="10"
+        placeholder="Comment:"
+        local-class="comment"
+        value=formValue.description
+      }}
+    </div>
+  </div>
+</div>

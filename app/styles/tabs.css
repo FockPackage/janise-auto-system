@@ -1,0 +1,218 @@
+@value ui-white, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, cadillac-red from 'ui-colors';
+
+:global(.tabs) {
+  position: relative;
+  & > nav {
+    overflow-x: auto;
+    padding-top: 20px;
+    @media (max-width: 767px) {
+      padding-top: 10px;
+    }
+    & > ul {
+      display: flex;
+      padding: 0 12px;
+      user-select: none;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      @media (max-width: 767px) {
+        padding: 0;
+        justify-content: center;
+      }
+      & li {
+        flex-basis: auto;
+        & a {
+          white-space: nowrap;
+          display: inline-block;
+          color: ui-gray;
+          transition: color 200ms ease-in;
+          &:hover,
+          &:focus {
+            color: cadillac-red;
+          }
+        }
+      }
+    }
+  }
+}
+
+:global(.tabs-style) {
+  & li {
+    margin-right: 48px;
+    transform: translateZ(0);
+    & a {
+      padding-bottom: 20px;
+      vertical-align: bottom;
+      @media (max-width: 767px) {
+        padding: 10px 0;
+      }
+    }
+    &:before {
+      position: absolute auto 0 0 0;
+      height: 4px;
+      content: '';
+      transition: all 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
+      transform: scaleX(0);
+      opacity: 0;
+      background: cadillac-red;
+
+      will-change: transform;
+      @media (max-width: 767px) {
+        height: 2px;
+      }
+    }
+    &:hover {
+      &:before {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+    @media (max-width: 991px) {
+      margin-right: 36px;
+    }
+    @media (max-width: 767px) {
+      margin: 0 12px;
+    }
+    &:global(.current) {
+      & a {
+        color: cadillac-red;
+      }
+      &:before {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+:global(.tabs-style-sub) {
+  &:before {
+    position: absolute auto 0 0 0;
+    width: 100%;
+    height: 1px;
+    content: '';
+    background-color: ui-silver;
+  }
+  & > nav {
+    padding: 0 24px;
+    @media (max-width: 991px) {
+      padding: 0;
+    }
+    & > ul {
+      color: ui-gray;
+      @media (max-width: 991px) {
+        padding: 0 24px;
+      }
+      @media (max-width: 767px) {
+        justify-content: flex-start;
+      }
+      @media (max-width: 479px) {
+        padding: 0 12px;
+      }
+    }
+    & li {
+      position: relative;
+      @media (max-width: 767px) {
+        text-align: center;
+        flex-grow: 1;
+      }
+      & > a {
+        padding: 12px 24px 8px 24px;
+        overflow: hidden;
+        max-width: 180px;
+        vertical-align: bottom;
+        text-overflow: ellipsis;
+      }
+      &:global(.current) {
+        border: 1px solid ui-silver;
+        border-bottom: transparent;
+        border-radius: 3px 3px 0 0;
+        background-color: ui-white;
+        & a {
+          color: ui-slate;
+          @media (max-width: 767px) {
+            padding: 12px 12px 8px 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+:global(i.dot) {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  vertical-align: bottom;
+  border-radius: 10px;
+}
+
+:global(i.dot.blue) {
+  border: 1px solid ui-blue;
+  background-color: color(ui-blue a(25%));
+}
+
+:global(i.dot.purple) {
+  border: 1px solid cadillac-red;
+  background-color: color(cadillac-red a(25%));
+}
+
+:global(i.dot.green) {
+  border: 1px solid ui-green;
+  background-color: color(ui-green a(25%));
+}
+
+:global(i.dot.gray) {
+  border: 1px solid ui-silver;
+  background-color: ui-light;
+}
+
+:global(i.dot.red) {
+  border: 1px solid ui-tomato;
+  background-color: color(ui-tomato a(25%));
+}
+
+:global(.tabs-style.editor) {
+  & nav {
+    & ul {
+      position: relative;
+      border: 1px solid ui-silver;
+      border-radius: 2px;
+      &:after {
+        position: absolute;
+        right: 50%;
+        width: 1px;
+        height: 100%;
+        content: '';
+        background-color: ui-silver;
+      }
+      & li {
+        width: 50%;
+        margin: 0;
+        padding: 4px 8px;
+        text-align: center;
+        &::before {
+          display: none;
+        }
+        &:global(.current) {
+          &:after {
+            position: absolute 0 0 0 0;
+            content: '';
+            background-color: ui-fade-silver;
+          }
+          &:nth-of-type(2) {
+            &:after {
+              right: -1px;
+            }
+          }
+          & a {
+            color: ui-slate;
+          }
+        }
+        & a {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

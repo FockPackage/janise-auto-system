@@ -1,0 +1,57 @@
+<div class="list-contents">
+  <div class="list-wrapper">
+    <h3>Exterior Color</h3>
+    <ul>
+      {{#each exteriorColors as |color|}}
+        {{common-ui/ui-list
+          check=true
+          type="radio"
+          info=true
+          labelId=(concat "color-" color.id)
+          vehicles=color.defaultImgSrc
+          label=color.meaning
+          checked=(eq selectedExteriorColorId color.id)
+          onClick=(action toggleColor color.id "exterior")
+        }}
+      {{/each}}
+      {{!-- <li><h4>Premium</h4></li>
+      {{common-ui/ui-list
+        check=true
+        type="radio"
+        info=true
+        labelId="item-5"
+        vehicles="../images/color/GGA.jpg"
+        label=(t "build.color.color-5")
+        price="$342"
+      }}
+      {{common-ui/ui-list
+        check=true
+        type="radio"
+        info=true
+        labelId="item-6"
+        vehicles="../images/color/G1E.jpg"
+        label=(t "build.color.color-6")
+        price="$342"
+      }} --}}
+    </ul>
+  </div>
+  {{#if interiorColors}}
+    <div class="list-wrapper">
+      <h3>Interior Color</h3>
+      <ul>
+        {{#each interiorColors as |color|}}
+          {{common-ui/ui-list
+            check=true
+            type="radio"
+            info=true
+            labelId=(concat "color-" color.id)
+            vehicles=color.defaultImgSrc
+            label=color.meaning
+            checked=(eq selectedInteriorColorId color.id)
+            onClick=(action toggleColor color.id "interior")
+          }}
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+</div>

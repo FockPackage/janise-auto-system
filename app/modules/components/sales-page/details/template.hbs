@@ -1,0 +1,95 @@
+<div local-class="details">
+  <h1>2017 CT6<span>AWD 3.6L ENGINE LUXURY (1SD)</span></h1>
+  <h1><span>NET PRICE</span>$61,390</h1>
+  <img src="../images/trims/RT4gmds2.jpg" alt="">
+  <h2>VEHICLE DETAILS</h2>
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>Exterior Trim</h3>
+        <span>$58.395</span>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+          vehicles="../images/sedans/2017-ct6-jellybean-200x123.png"
+          label="RWD 2.0L TURBO ENGINE CT6"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>Exterior Color</h3>
+        <span>$495</span>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+          vehicles="../images/color/GC8.jpg"
+          label=(t "build.color.color-1")
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>Selected Options</h3>
+        {{ui-switch
+          local-class="options"
+          size="l"
+        }}
+        <span>$495</span>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+          vehicles="../images/exterior/RT9.jpg"
+          label=(t "build.exterior.exterior-2")
+        }}
+        {{common-ui/ui-list
+          vehicles="../images/exterior/SD4.jpg"
+          label="Tire inflator"
+        }}
+        {{common-ui/ui-list
+          vehicles="../images/interior/VYW.jpg"
+          label="Premium carpeted floor mats"
+        }}
+        {{common-ui/ui-list
+          vehicles="../images/accessories/SAO.jpg"
+          label="Smoker's Package"
+        }}
+      </ul>
+    </div>
+  </div>
+  <div local-class="total-wrapper" class="contents-wrapper">
+    <div local-class="total">
+      <h3>TOTAL VEHICLE PRICE<span>$69,140</span></h3>
+      <div local-class="net-price">
+        <h2>NET PRICE<span>$69,140</span></h2>
+      </div>
+    </div>
+    <div local-class="finance">
+      <div>
+        <div local-class="finance-title">
+          <h4>Finance</h4>
+        </div>
+        <h1>$877<span>per month for 72 months</span></h1>
+      </div>
+      <span>4.49% APR for Well-Qualified Buyers. Amount Financed $55,251. $6,139 down payment.</span>
+    </div>
+    <div local-class="finance">
+      <div>
+        <div local-class="finance-title">
+          <h4>nsurance</h4>
+        </div>
+        <h1>$425<span>per month for 72 months</span></h1>
+      </div>
+      <span>4.49% APR for Well-Qualified Buyers. Amount Financed $55,251. $6,139 down payment.</span>
+    </div>
+  </div>
+  <div class="button-wrapper contents-wrapper">
+    {{#link-to "sales.contact" tagName="button" class="border"}}
+      {{ui-icon icon="arrows-cloud-upload"}}
+      <span>Save</span>
+    {{/link-to}}
+    {{ui-button "Creating Contract" color="cadillac-red" icon="files-documents"}}
+  </div>
+</div>
+
+

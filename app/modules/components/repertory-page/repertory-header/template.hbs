@@ -1,0 +1,13 @@
+{{#if (eq headerButton.text 'Save')}}
+  {{ui-button
+    headerButton.text
+    color="cadillac-red"
+    icon="ui-simple-add"
+    onClick=(action headerButton.action)
+  }}
+{{else}}
+  {{#link-to headerButton.route tagName="button" class="button cadillac-red"}}
+    {{ui-icon icon="ui-simple-add"}}
+    {{headerButton.text}}
+  {{/link-to}}
+{{/if}}

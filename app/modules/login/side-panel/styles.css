@@ -1,0 +1,69 @@
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate, cadillac-red from 'ui-colors';
+
+.side-panel {
+  width: 360px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 24px;
+  overflow: hidden;
+  color: ui-white;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 479px) {
+    height: 30vh;
+  }
+}
+
+.side-panel.slate {
+  background-image: linear-gradient(180deg, cadillac-red, color(cadillac-red lightness(40%)));
+}
+
+.welcome {
+  position: relative;
+  z-index: 10;
+  & h1 {
+    font-family: 'Kiro-Regular';
+    font-size: 32px;
+    line-height: normal;
+    text-align: left;
+    margin: 0 0 12px;
+    @media (max-width: 479px) {
+      font-size: 24px;
+    }
+  }
+  & a {
+    &:visited {
+      color: ui-white;
+    }
+  }
+  & h2 {
+    margin-top: 36px;
+    @media (max-width: 479px) {
+      display: none;
+    }
+  }
+  & ul {
+    @media (max-width: 479px) {
+      font-size: smaller;
+      line-height: normal;
+      margin-top: 12px;
+    }
+  }
+  & p {
+    margin-top: 36px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.logo {
+  fill: ui-white;
+  & svg {
+    height: 24px;
+    @media (max-width: 479px) {
+      height: 18px;
+    }
+  }
+}

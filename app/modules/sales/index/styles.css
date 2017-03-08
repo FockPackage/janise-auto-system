@@ -1,0 +1,20 @@
+@value ui-white, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, cadillac-red from 'ui-colors';
+
+.sales-page {
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  overflow: hidden;
+}
+
+:global(.contents-wrapper) {
+  width: 65%;
+  @media (max-width: 990px) {
+    width: 100%;
+  }
+}
+
+:global(html.mobile) {
+  & .sales-page {
+    margin-top: 1rem;
+  }
+}

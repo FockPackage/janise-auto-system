@@ -1,0 +1,8 @@
+{{#ui-fieldset size="s" as |f|}}
+  {{#each td.value as |checkbox|}}
+    {{f.checkbox
+      label=checkbox.label
+      checked=checkbox.checked
+    }}
+  {{/each}}
+{{/ui-fieldset}}

@@ -1,0 +1,53 @@
+<div class="list-contents">
+  <div class="list-wrapper">
+    <h3>Interior</h3>
+    <ul>
+      {{#each carAccessories as |accessory|}}
+        {{common-ui/ui-list
+          check=true
+          type="checkbox"
+          spinner=accessory.checked
+          spinnerValue=accessory.count
+          info=true
+          labelId=(concat "accessory-" accessory.id)
+          vehicles=accessory.defaultImgSrc
+          label=accessory.fitName
+          price=accessory.costPrice
+          checked=accessory.checked
+          onClick=(action "toggleAccessory" accessory.id "carAccessories" accessory.costPrice)
+          onEditClick=(action "togglePopup" "setAccessoryCount" accessory)
+          onSpinnerInput=(action "test" accessory.id)
+        }}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="list-wrapper">
+    <h3>Security and Protection</h3>
+    <ul>
+      {{#each accessories as |accessory|}}
+        {{common-ui/ui-list
+          check=true
+          type="checkbox"
+          spinner=accessory.checked
+          spinnerValue=accessory.count
+          info=true
+          labelId=(concat "accessory-" accessory.id)
+          vehicles=accessory.defaultImgSrc
+          label=accessory.fitName
+          price=accessory.costPrice
+          checked=accessory.checked
+          onClick=(action "toggleAccessory" accessory.id "accessories" accessory.costPrice)
+          onEditClick=(action "togglePopup" "setAccessoryCount" accessory)
+          onSpinnerInput=(action "test" accessory.id)
+      }}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+{{#if isShow.setAccessoryCount}}
+  {{common-ui/mobi-numpad
+    onSet=(action "setAccessoryCount")
+    onClose=(action "togglePopup" "setAccessoryCount")
+  }}
+{{/if}}

@@ -1,0 +1,36 @@
+@value ui-white, ui-light, ui-fade-silver, ui-silver, cadillac-red from 'ui-colors';
+
+.net-price {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: ui-white;
+  text-transform: uppercase;
+  & .price {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    & span {
+      margin-right: .5rem;
+    }
+  }
+  & > h3 {
+    text-align: left;
+    flex-basis: 50%;
+  }
+  & button {
+    margin-left: 1rem;
+  }
+}
+
+:global(html.mobile) {
+  & .net-price {
+    & .price {
+      flex-direction: column;
+      & span {
+        font-size: x-small;
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+}

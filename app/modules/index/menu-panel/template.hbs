@@ -1,0 +1,20 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{ui-button 'menu' color="blank" expand=true}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    <div class="option checkmark">
+      <div class="optgroup">{{t ""}}</div>
+      <ul class="option-contents">
+        {{#each td.value as |menu|}}
+          <li>
+            <a>
+              {{ui-icon icon="ui-check" style="checkmark"}}
+              <span>{{menu.label}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

@@ -1,0 +1,102 @@
+<div local-class="vehicles-warehouse">
+  <h2>Warehouse Vehicles</h2>
+
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <h3>PCM VIN</h3>
+      {{input
+        type="text"
+        local-class="vin"
+        value=formValue.carIdentify
+        focus-out=(action "searchCar" formValue.carIdentify)
+        disabled=formValue.canEdit
+      }}
+      {{#if alert.created}}
+        <p>车辆识别码已存在</p>
+      {{/if}}
+    </div>
+    <div class="list-wrapper-column">
+      <div class="list-wrapper">
+        <h3>Vehicles</h3>
+        {{#common-ui/mobi-image placeholder='选择汽车种类' mobiConfig=carType_MobiConfig}}
+          {{#each carTypes as |carType|}}
+            <li id={{concat "carType-" carType.id}} data-val={{carType.meaning}}>
+              <img src={{carType.defaultImgSrc}} />
+              <p>{{carType.meaning}}</p>
+            </li>
+          {{/each}}
+        {{/common-ui/mobi-image}}
+      </div>
+
+      {{#if configs}}
+        <div class="list-wrapper">
+          <h3>TRIMS</h3>
+          {{#common-ui/mobi-treelist placeholder='选择型号' mobiConfig=carConfig_MobiConfig}}
+            {{#each configs as |config|}}
+              <li id={{concat "config-" config.carConfigId}} data-val={{config.carConfig.meaning}}>
+                <p>{{config.carConfig.meaning}}</p>
+              </li>
+            {{/each}}
+          {{/common-ui/mobi-treelist}}
+        </div>
+      {{/if}}
+    </div>
+
+    {{#if years}}
+      <div class="list-wrapper-column">
+        <div class="list-wrapper">
+          <h3>Year</h3>
+          {{#common-ui/mobi-treelist placeholder='选择出厂时间' mobiConfig=year_MobiConfig}}
+            {{#each years as |year|}}
+              <li id={{concat "year-" year.carYearId}} data-val={{year.carYear.meaning}}>
+                <p>{{year.carYear.meaning}}</p>
+              </li>
+            {{/each}}
+          {{/common-ui/mobi-treelist}}
+        </div>
+      </div>
+    {{/if}}
+
+    <div class="list-wrapper-column">
+      {{#if filteredExteriorColors}}
+        <div class="list-wrapper">
+          <h3>Exterior Color</h3>
+
+          {{#common-ui/mobi-image placeholder='选择颜色' mobiConfig=exteriorColor_MobiConfig}}
+            {{#each filteredExteriorColors as |exteriorColor|}}
+              <li id={{concat "exteriorColor-" exteriorColor.id}} data-val={{exteriorColor.meaning}}>
+                <img src={{exteriorColor.defaultImgSrc}}/>
+                <p>{{exteriorColor.meaning}}</p>
+              </li>
+            {{/each}}
+          {{/common-ui/mobi-image}}
+
+        </div>
+      {{/if}}
+
+      {{#if filteredInteriorColors}}
+        <div class="list-wrapper">
+          <h3>Interior Color</h3>
+          {{#common-ui/mobi-image placeholder='选择颜色' mobiConfig=insideColor_MobiConfig}}
+            {{#each filteredInteriorColors as |car|}}
+              <li id={{concat "interiorColor-" car.carInsideColor.id}} data-val={{car.carInsideColor.meaning}}>
+                <img src={{car.carInsideColor.defaultImgSrc}}/>
+                <p>{{car.carInsideColor.meaning}}</p>
+              </li>
+            {{/each}}
+          {{/common-ui/mobi-image}}
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="list-wrapper">
+      <h3>Comment</h3>
+      {{textarea cols="30" rows="10" placeholder="Comment:" local-class="comment" value=formValue.description}}
+    </div>
+  </div>
+
+  {{#common-ui/mobi-form}}
+    <button class="mbsc-btn-block" data-icon="plus">添加</button>
+  {{/common-ui/mobi-form}}
+
+</div>

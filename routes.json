@@ -1,0 +1,10 @@
+{
+  "/api/classify/getCarSalesClass": "/carTypes",
+  "/api/sales/getCarRelation": "/cars",
+  "/api/classify/getOutsideColor": "/exteriorColors",
+  "/api/classify/getInsideColor": "/interiorColors",
+  "/api/classify/getHub": "/defaultWheels",
+  "/api/warehouseAccessories/getAccessories": "/accessories",
+  "/api/client/getClient": "/clients",
+  "/api/order/getOrder": "/orders"
+}

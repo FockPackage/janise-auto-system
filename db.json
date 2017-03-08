@@ -1,0 +1,406 @@
+{
+  "carTypes": [
+    {
+      "valueID": 1,
+      "value": "ct1",
+      "meaning": "",
+      "description": "",
+      "defaultImageUrl": "/images/sedans/2017-ats-coupe-jellybean-200x123.png"
+    },
+    {
+      "valueID": 2,
+      "value": "ct2",
+      "meaning": "",
+      "description": "",
+      "defaultImageUrl": "/images/sedans/2017-ats-sedan-jellybean-200x123.png"
+    },
+    {
+      "valueID": 3,
+      "value": "ct3",
+      "meaning": "",
+      "description": "",
+      "defaultImageUrl": "/images/sedans/2017-ats-coupe-jellybean-200x123.png"
+    },
+    {
+      "valueID": 4,
+      "value": "ct4",
+      "meaning": "",
+      "description": "",
+      "defaultImageUrl": "/images/sedans/2017-ats-coupe-jellybean-200x123.png"
+    },
+    {
+      "valueID": 5,
+      "value": "ct5",
+      "meaning": "",
+      "description": "",
+      "defaultImageUrl": "/images/sedans/2017-ats-coupe-jellybean-200x123.png"
+    },
+    {
+      "valueID": 6,
+      "value": "ct6",
+      "meaning": "",
+      "description": "",
+      "defaultImageUrl": "/images/sedans/2017-ats-coupe-jellybean-200x123.png"
+    }
+  ],
+  "exteriorColors": [
+    {
+      "valueID": "black2",
+      "value": "black",
+      "defaultImageUrl": "/images/color/GGA.jpg"
+    },
+    {
+      "valueID": "white1",
+      "value": "white",
+      "defaultImageUrl": "/images/color/G1E.jpg"
+    }
+  ],
+  "interiorColors": [
+    {
+      "valueID": "red1",
+      "value": "red",
+      "defaultImageUrl": "/images/color/GGA.jpg"
+    },
+    {
+      "valueID": "black1",
+      "value": "black",
+      "defaultImageUrl": "/images/color/G1E.jpg"
+    }
+  ],
+  "defaultWheels": [
+    {
+      "valueID": 1,
+      "value": "Wheels, 18 multi-spoke aluminum with Blade Silver painted finish",
+      "defaultImageUrl": "/images/exterior/RT4.jpg"
+    },
+    {
+      "valueID": 2,
+      "value": "Wheels, 19 multi-spoke aluminum with Sterling Silver premium painted finish",
+      "defaultImageUrl": "/images/exterior/RT9.jpg"
+    }
+  ],
+  "cars": [
+    {
+      "carRelationID": 1,
+      "carConfigID": 1,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct1",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.0t",
+      "officialGuidePrice": "19000",
+      "defalutImgSrc": "/images/sedans/2017-ats-sedan-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000|test",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 3,
+      "carConfigID": 1,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct2",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.1t",
+      "officialGuidePrice": "19001",
+      "defalutImgSrc": "/images/sedans/2017-ats-sedan-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 4,
+      "carConfigID": 1,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct3",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.2t",
+      "officialGuidePrice": "19002",
+      "defalutImgSrc": "/images/sedans/2017-ats-sedan-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 5,
+      "carConfigID": 1,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct4",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.3t",
+      "officialGuidePrice": "19003",
+      "defalutImgSrc": "/images/sedans/2017-ats-sedan-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 6,
+      "carConfigID": 1,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct5",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.4t",
+      "officialGuidePrice": "19004",
+      "defalutImgSrc": "/images/sedans/2017-ats-sedan-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 7,
+      "carConfigID": 1,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct6",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.5t",
+      "officialGuidePrice": "19005",
+      "defalutImgSrc": "/images/sedans/2017-ats-sedan-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 8,
+      "carConfigID": 1,
+      "carInsideColorID": "black1",
+      "carOutsideColorID": "black2",
+      "carTypeValue": "ct1",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.0t",
+      "officialGuidePrice": "19000",
+      "defalutImgSrc": "/images/sedans/2017-ats-coupe-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 9,
+      "carConfigID": 1,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "black2",
+      "carTypeValue": "ct1",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.0t",
+      "officialGuidePrice": "19000",
+      "defalutImgSrc": "/images/sedans/2017-ats-coupe-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 10,
+      "carConfigID": 1,
+      "carInsideColorID": "black1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct1",
+      "carYearValue": "2016",
+      "carDisplaceValue": "2.0t",
+      "officialGuidePrice": "19000",
+      "defalutImgSrc": "/images/sedans/2017-ats-coupe-jellybean-200x123.png",
+      "carSummary1": "2016",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000",
+      "carHubID": 1,
+      "carConfigValue": "LUXURY"
+    },
+    {
+      "carRelationID": 11,
+      "carConfigID": 2,
+      "carInsideColorID": "red1",
+      "carOutsideColorID": "white1",
+      "carTypeValue": "ct1",
+      "carYearValue": "2017",
+      "carDisplaceValue": "3.0t",
+      "officialGuidePrice": "19000",
+      "defalutImgSrc": "/images/sedans/2017-ats-sedan-jellybean-200x123.png",
+      "carSummary1": "2017",
+      "carSummary2": "2.0t",
+      "carSummary3": "19000|test",
+      "carHubID": 1,
+      "carConfigValue": "PREMIUM LUXURY"
+    }
+  ],
+  "accessories": [
+    {
+      "fitID": 0,
+      "fitName": "轮毂",
+      "carRelationID": 1,
+      "fitType": "wheel",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/exterior/RT4.jpg",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 1,
+      "fitName": "Wheel locks",
+      "carRelationID": 1,
+      "fitType": "exterior",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/exterior/SFE.jpg",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 2,
+      "fitName": "Tire inflator",
+      "carRelationID": 1,
+      "fitType": "exterior",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/exterior/SD4.jpg",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 3,
+      "fitName": "Flush-mounted rear spoiler",
+      "carRelationID": 3,
+      "fitType": "exterior",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/exterior/SB2.jpg",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 4,
+      "fitName": "Seats, 14-way front bucket for driver and front passenger",
+      "carRelationID": 1,
+      "fitType": "interior",
+      "salePrice": 10,
+      "defaultImageUrl": "",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 5,
+      "fitName": "Premium carpeted floor mats",
+      "carRelationID": 1,
+      "fitType": "interior",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/interior/VYW.jpg",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 6,
+      "fitName": "All-weather floor mats",
+      "carRelationID": 1,
+      "fitType": "interior",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/interior/VAV.jpg",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 7,
+      "fitName": "Illuminated Trunk Sill Plate",
+      "carRelationID": 3,
+      "fitType": "interior",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/interior/5RU.jpg",
+      "isOfficial": "0"
+    },
+    {
+      "fitID": 8,
+      "fitName": "Floor Mats - Carpet Replacement",
+      "carRelationID": 1,
+      "fitType": "4s",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/accessories/SAO.jpg",
+      "isOfficial": "1"
+    },
+    {
+      "fitID": 9,
+      "fitName": "Smoker's Package",
+      "carRelationID": 2,
+      "fitType": "4s",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/accessories/RWS.jpg",
+      "isOfficial": "1"
+    },
+    {
+      "fitID": 10,
+      "fitName": "All-weather floor mats",
+      "carRelationID": null,
+      "fitType": "4s",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/interior/VAV.jpg",
+      "isOfficial": "1"
+    },
+    {
+      "fitID": 11,
+      "fitName": "Illuminated Trunk Sill Plate",
+      "carRelationID": null,
+      "fitType": "4s",
+      "salePrice": 10,
+      "defaultImageUrl": "/images/interior/5RU.jpg",
+      "isOfficial": "1"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "李旭",
+      "mobile": 15603605236,
+      "date": "2017-02-12"
+    },
+    {
+      "id": 2,
+      "name": "王炜",
+      "mobile": 15603605236,
+      "date": "2017-02-12"
+    },
+    {
+      "id": 3,
+      "name": "余凡",
+      "mobile": 15603605236,
+      "date": "2017-02-12"
+    },
+    {
+      "id": 4,
+      "name": "陈璋",
+      "mobile": 15603605236,
+      "date": "2017-02-12"
+    }
+  ],
+  "orders": [
+    {
+      "orderCode": 1,
+      "carIndentify": "ADS-2309486",
+      "carPrice": 19000,
+      "isReadOfSale": false
+    },
+    {
+      "orderCode": 2,
+      "carIndentify": "ADS-2309486",
+      "carPrice": 19001,
+      "isReadOfSale": true
+    },
+    {
+      "orderCode": 3,
+      "carIndentify": "ADS-2309486",
+      "carPrice": 19002,
+      "isReadOfSale": false
+    },
+    {
+      "orderCode": 4,
+      "carIndentify": "ADS-2309486",
+      "carPrice": 19003,
+      "isReadOfSale": true
+    }
+  ]
+}

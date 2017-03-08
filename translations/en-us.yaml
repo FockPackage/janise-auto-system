@@ -1,0 +1,148 @@
+# 404
+404:
+  404: "404"
+  not-found: "page not found"
+  description1: "We looked everywhere for this page."
+  description2: "Are you sure the website URL is correct?"
+  description3: "Get in touch with the site owner."
+  go-to-homepage: "Go to Homepage"
+
+# Login
+login:
+  email: "Email address"
+  password: "Password"
+  signup-password: " Password (min 6 characters)"
+  login: "Login"
+  signup: "Sign Up"
+  signout: "Sign Out"
+  login-into: "Login Into Your Account"
+  create-account: "Create Account"
+  create-free-account: "Create Your Free Account"
+  remember-me: "Remember me"
+  forgot-password: "Forgot your password?"
+  no-account: "Don't have an account?"
+  already-account: "Already have an account?"
+  # Welcome
+  welcome-back: "4S Workflow Management Systems"
+  description: "Main Features"
+  des-li-1: "Improved efficiency"
+  des-li-2: "Better process control"
+  des-li-3: "Improved customer service"
+  des-li-4: "Flexibility"
+nav:
+  i18n: "i18n"
+  search: "Search"
+
+Internationalization:
+  internationalization: "Internationalization"
+  folder: "Folder"
+  add-folder: "Add Folder"
+  add-key: "Add Key String"
+  add-language: "Add Language"
+  save: "Save"
+  settings: "Settings"
+  move-to-folder: "Move to Folder"
+  delete: "Delete"
+  duplicate: "Duplicate"
+
+project:
+  project: "Project"
+  new-project: "New Project"
+  new-project-help: "Need a group for several dependent projects?"
+  project-name: "Project Name:"
+  project-description: "Project Description (optional):"
+  project-avatar: "Project Avatar:"
+  choose-file: "Choose File..."
+  avatar-help: "You can change your project avatar here, The maximum file size allowed is 200KB."
+  danger-zone: "Danger Zone"
+  delete-project: "Delete this project"
+  delete-project-help: "Once you delete a project, there is no going back. Please be certain."
+  overview: "Overview"
+  key-string: "Key String"
+  language: "Language"
+
+
+# Footer Nav
+footer-nav:
+  help-support: "Help & Support"
+  tutorials: "Tutorials"
+  blog: "Blog"
+  privacy-policy: "Privacy Policy"
+  terms-service: "Terms of Service"
+  year: "© 2016,"
+  copyright: ", Inc. All Rights Reserved."
+
+
+
+
+vehicles:
+  vehicles: "Vehicles"
+  ats-l: "ATS-L"
+  xts: "XTS"
+  cts: "CTS"
+  ct6:
+    ct6: "CT6"
+    2017-ct6: "2017 CT6"
+    20l: "RWD 2.0L TURBO ENGINE CT6"
+    30l: "RWD 3.0L TWIN TURBO ENGINE CT6"
+
+  xt5: "XT5"
+  escalade: "ESCALADE"
+
+build:
+  home: "Home"
+  net-price: "Net Price"
+
+  trims:
+    trims: "Trims"
+    trim: "TRIM"
+    select: "Select"
+
+
+  color:
+    color: "Color"
+    color-1: "Black Raven"
+    color-2: "Radiant Silver Metallic"
+    color-3: "Bronze Dune Metallic"
+    color-4: "Dark Adriatic Blue Metallic"
+    color-5: "Deep Amethyst Metallic"
+    color-6: "Red Passion Tintcoat"
+
+  packages:
+    packages: "Packages"
+
+  exterior:
+    exterior: "Exterior"
+    exterior-1: "Wheels, 18 multi-spoke aluminum with Blade Silver painted finish"
+    exterior-2: "Wheels, 19 multi-spoke aluminum with Sterling Silver premium painted finish"
+    exterior-3: "Wheels, 20 polished aluminum"
+    exterior-4: "Transmission, 8-speed automatic"
+
+  interior:
+    interior: "Interior"
+
+  accessories:
+    accessories: "Accessories"
+
+  summary:
+    summary: "Summary"
+    vehicle-details: "Vehicle Details"
+    standard-vehicle-price: "Standard Vehicle Price:"
+
+manage:
+  sales: "Sales"
+  repertory: "Repertory"
+  aftersales: "After-Sales"
+  customer: "Customer"
+  data: "Data"
+  manage: "Manage"
+
+modules:
+    vehicles: "Vehicles"
+    accessories: "Accessories"
+    client: "Client"
+
+sales:
+  trims:
+    notification:
+      error: 'not select car!'

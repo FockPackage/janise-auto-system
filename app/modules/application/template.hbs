@@ -1,0 +1,34 @@
+{{ui-notification}}
+
+{{#if singlePage}}
+  {{outlet}}
+{{else}}
+  <div class="main-wrapper">
+    {{#ui-navigation class=navClassName as |nav|}}
+      {{#nav.primary label=primaryLabel showLogo=showLogo as |inner|}}
+        {{#if defaultMenu}}
+          {{#inner.menu position="r" class="menu-button"}}
+            {{ui-button (t "login.signout") color="blue" icon="media-button-power"}}
+          {{/inner.menu}}
+        {{else}}
+          {{component primaryComponent logout=(route-action "logout")}}
+        {{/if}}
+      {{/nav.primary}}
+
+      {{#if hasSubnav}}
+        {{#nav.secondary}}
+          {{outlet "subnav"}}
+        {{/nav.secondary}}
+      {{/if}}
+    {{/ui-navigation}}
+
+    {{outlet}}
+  </div>
+{{/if}}
+
+{{#if hasFooter}}
+  {{common-ui/footer-nav tagName="footer"}}
+{{/if}}
+
+{{svg-icon/dashboard-icon}}
+{{svg-icon/min-icon}}

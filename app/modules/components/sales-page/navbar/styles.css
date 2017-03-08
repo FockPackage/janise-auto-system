@@ -1,0 +1,118 @@
+@value ui-white, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, cadillac-red from 'ui-colors';
+
+:global(.navbar) {
+
+}
+
+.navbar-main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 1px solid ui-silver;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background-color: ui-silver;
+    z-index: 2;
+  }
+  & li {
+    position: relative;
+    flex-grow: 1;
+    background-color: ui-white;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: ui-silver;
+      z-index: 2;
+    }
+    & a {
+      color: ui-slate;
+      position: relative;
+      text-align: center;
+      display: block;
+      line-height: 3rem;
+      & span {
+        font-weight: 600;
+        line-height: 3rem;
+        text-transform: uppercase;
+      }
+      &:global(.active) {
+        color: ui-white;
+        background-color: ui-silver;
+        &:after {
+          border-left: 1.5rem solid ui-silver !important;
+        }
+      }
+    }
+    &:not(:first-of-type) {
+      & a {
+        padding: 0 .8rem 0 2.3rem;
+      }
+    }
+    &:first-of-type {
+      & a {
+        padding: 0 .8rem;
+        &:global(.active) {
+          background-color: ui-white;
+          &:after {
+            border-left: 1.5rem solid ui-white !important;
+          }
+        }
+        & img {
+          height: 1.5rem;
+        }
+      }
+    }
+    &:not(:last-of-type) {
+      & a {
+        &:before {
+          content: '';
+          position: absolute;
+          border: 1.5rem solid transparent;
+          border-left: 1.5rem solid ui-silver;
+          top: 0;
+          right: -3rem;
+          z-index: 1;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          border: 1.5rem solid transparent;
+          border-left: 1.5rem solid ui-white;
+          top: 0;
+          right: -3rem;
+          margin-right: 1px;
+          z-index: 1;
+        }
+      }
+    }
+    &:last-of-type {
+      border-right: 1px solid ui-silver;
+    }
+  }
+}
+
+:global(html.mobile) {
+  & :global(.navbar) {
+
+  }
+  & .navbar-main {
+    padding-right: 1.5rem;
+    &:before {
+      right: 1.5rem;
+    }
+    & li {
+      & a {
+        font-size: x-small;
+      }
+    }
+  }
+}

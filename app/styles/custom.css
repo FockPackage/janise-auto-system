@@ -1,0 +1,98 @@
+@value ui-white, ui-green, ui-light, ui-fade-silver, ui-silver, cadillac-red from 'ui-colors';
+
+
+:global(html) {
+  font-size: 16px;
+  &:global(.mobile) {
+    font-size: 14px;
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
+    & :global(h3) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+:global(body) {
+  font-size: 1rem;
+  text-rendering: geometricPrecision;
+}
+
+:global(h1) {
+  font-size: 2.4rem;
+}
+
+:global(h2) {
+  font-size: 1.8rem;
+}
+
+:global(h3) {
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+
+:global(.w-container) {
+  @media (max-width: 479px) {
+    min-width: 320px;
+  }
+}
+
+:global(.ui-navigation) {
+  z-index: 20;
+}
+
+:global(.ui-navigation.cadillac) > nav {
+  &:global(.primary) {
+    background-color: cadillac-red;
+  }
+}
+
+:global(.icon-button) {
+  &:global(.active) {
+    border-color: ui-green;
+    & svg {
+      fill: ui-green;
+    }
+  }
+  &:global(.cadillac-red) {
+    color: ui-white;
+    border-radius: 3px;
+    background-color: cadillac-red;
+    transition: background-color 200ms ease;
+    &:hover {
+      background-color: color(cadillac-red blackness(+12%));
+    }
+  }
+}
+
+:global(button) {
+  &:global(.cadillac-red) {
+    color: ui-white;
+    background-color: cadillac-red;
+    transition: background-color 200ms ease;
+    &:hover {
+      background-color: color(cadillac-red lightness(-12%));
+    }
+  }
+}
+
+:global(.checked) {
+  & path {
+    fill: cadillac-red;
+  }
+}
+
+:global(textarea),
+:global(input) {
+  &:focus {
+    border: 1px solid cadillac-red;
+    box-shadow: inset color(cadillac-red a(15%)) 0 0 0 2px;
+  }
+}
+
+:global(.swiper-pagination) {
+  & :global(.swiper-pagination-bullet-active) {
+    background-color: cadillac-red;
+  }
+}

@@ -1,0 +1,24 @@
+{{#basic-dropdown as |search|}}
+  {{#search.trigger}}
+    {{ui-button currentSearchType.text color="border" expand=true}}
+  {{/search.trigger}}
+  {{#search.content}}
+    <div class="option checkmark">
+      <div class="optgroup">Search Type</div>
+      <ul class="option-contents">
+        {{#each searchTypes as |searchType|}}
+          <li
+            onclick={{action (pipe changeSearchType search.actions.close) searchType}}
+          >
+            <a>
+              {{#if (eq searchType.text currentSearchType.text)}}
+                {{ui-icon icon="ui-check" style="checkmark"}}
+              {{/if}}
+              <span>{{searchType.text}}</span>
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/search.content}}
+{{/basic-dropdown}}

@@ -1,0 +1,12 @@
+<div local-class="net-price">
+  <h3>{{title}}</h3>
+  <div local-class="price">
+    {{#if netPrice}}
+      <span>{{t "build.net-price"}}</span>
+      <h3>{{netPrice}} 元</h3>
+    {{/if}}
+  </div>
+  {{#unless (eq router.currentRouteName 'sales.summary')}}
+    {{link-to "Next" nextRouteName tagName="button" class="button cadillac-red"}}
+  {{/unless}}
+</div>

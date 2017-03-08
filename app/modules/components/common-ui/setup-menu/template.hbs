@@ -1,0 +1,12 @@
+{{#basic-dropdown as |dropdown|}}
+  {{#dropdown.trigger}}
+    {{ui-icon-button icon=icon size="12px" viewBox="12"}}
+  {{/dropdown.trigger}}
+  {{#dropdown.content}}
+    <ul local-class="floating">
+      <li>{{des}}</li>
+      <li>{{button1}}</li>
+      <li>{{button2}}</li>
+    </ul>
+  {{/dropdown.content}}
+{{/basic-dropdown}}

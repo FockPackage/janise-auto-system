@@ -1,0 +1,80 @@
+<div local-class="accessories-repertory">
+  <h2>Accessories Repertory</h2>
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <div class="list-title">
+        {{common-ui/search-input currentSearchType=currentSearchType onSearch=searchAccessory}}
+        {{common-ui/search-type-menu
+          class="menu"
+          searchTypes=searchTypes
+          currentSearchType=currentSearchType
+          changeSearchType=changeSearchType
+        }}
+      </div>
+      <ul>
+        {{#each accessories as |accessory|}}
+          {{#if accessory.fitName}}
+            {{common-ui/ui-list
+              module="repertory"
+              edit=(concat "accessory-" accessory.id)
+              setting=true
+              warehouse=accessory.dateTime
+              vehicles=accessory.defaultImgSrc
+              accessoriesID=accessory.accessories.fitCode
+              label=accessory.fitName
+              comment=accessory.description
+              stock=accessory.stockSum
+              onEditClick=(action goTo accessory)
+              storage="2"
+              onSettingClick=(action "togglePopup" "updatePrice" accessory)
+            }}
+          {{else}}
+            {{common-ui/ui-list
+              module="repertory"
+              delivery=true
+              vehicles=accessory.accessories.defaultImgSrc
+              label=accessory.itemName
+              comment=accessory.description
+              onDeliveryClick=(action "togglePopup" "confirm" accessory)
+            }}
+          {{/if}}
+        {{else}}
+          <p>搜索内容为空</p>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{#ui-popup
+  isShow=isShow.updatePrice
+  size='m'
+  icon='ui-alert'
+  title='price'
+  cancelText='取消'
+  confirmText='确认'
+  color='cadillac-red'
+  closePopup=(action "togglePopup" "updatePrice")
+  onClick=(action "none")
+}}
+  {{ui-switch
+    size="xl"
+    label="允许售出:"
+    toggle=(not currentEditAccessory.closeStatus)
+    onToggle=(action toggleCanSell currentEditAccessory.id currentEditAccessory.closeStatus)
+  }}
+{{/ui-popup}}
+
+{{#ui-popup
+  isShow=isShow.confirm
+  size='m'
+  icon='ui-alert'
+  title='price'
+  cancelText='取消'
+  confirmText='确认'
+  color='cadillac-red'
+  closePopup=(action "togglePopup" "confirm")
+  onClick=(action deliveryAccessory currentEditAccessory.accessoriesId)
+}}
+  <p>确认出库吗？</p>
+{{/ui-popup}}

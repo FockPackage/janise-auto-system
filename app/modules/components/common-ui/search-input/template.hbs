@@ -1,0 +1,11 @@
+{{ui-icon-button icon="ui-zoom" onClick=(action onSearch currentSearchType.text formValue)}}
+{{#if (eq currentSearchType.type "date")}}
+  {{input type=text placeholder="Search" id="searchDate" value=formValue.text}}
+{{else}}
+  {{input
+    type=type
+    placeholder="Search"
+    value=formValue.text
+    enter=(action onSearch currentSearchType.text formValue)
+  }}
+{{/if}}

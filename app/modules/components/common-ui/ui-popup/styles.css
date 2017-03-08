@@ -1,0 +1,70 @@
+@value ui-white, ui-green, ui-light, ui-fade-silver, ui-silver, cadillac-red from 'ui-colors';
+
+.static-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: color(black a(60%));
+  z-index: 100;
+}
+
+.popup {
+  width: 36rem;
+  background-color: ui-white;
+  border: 1px solid ui-light;
+  box-shadow: 0 4px 6px 0 color(black a(20%));
+}
+
+:global(.popup-header) {
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem 0 1rem;
+  background-color: ui-white;
+  & a {
+    margin-left: auto;
+  }
+  & > svg {
+    fill: ui-fade-slate;
+    margin-right: .5rem;
+  }
+  & > span {
+    line-height: 3rem;
+  }
+}
+
+.container {
+  padding: 1rem;
+}
+
+.footer {
+  padding: 1rem;
+  & button {
+    &:last-of-type {
+      float: right;
+    }
+  }
+}
+
+:global(html.mobile) {
+  & :global(.popup-header) {
+    padding: 0 0 0 1rem;
+  }
+  & .popup {
+    width: 96vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 6rem;
+  }
+  & .container {
+
+  }
+  & .footer {
+
+  }
+}

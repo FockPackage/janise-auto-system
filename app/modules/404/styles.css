@@ -1,0 +1,32 @@
+@value ui-white, ui-light, ui-purple, ui-fade-silver, ui-silver, cadillac-red from 'ui-colors';
+
+.main {
+  position: absolute 0 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-bottom: 48px;
+
+  & h1 {
+    color: ui-purple;
+    font-size: 36px;
+    line-height: normal;
+  }
+
+  & button {
+    margin-top: 24px;
+  }
+}
+
+.not-found {
+  font-size: 24px;
+  line-height: normal;
+}
+
+.description {
+  color: ui-gray;
+  margin-top: 12px;
+}

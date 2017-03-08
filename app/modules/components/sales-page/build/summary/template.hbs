@@ -1,0 +1,193 @@
+<div local-class="summary">
+  <div class="list-contents">
+
+    {{#if orderInfo.isBuyCar}}
+      <h2>VEHICLE DETAILS</h2>
+      <div class="list-wrapper">
+        <div class="list-title">
+          <h3>Exterior Trim</h3>
+          <span>{{orderInfo.carNetPrice}} 元</span>
+        </div>
+        <ul>
+          {{common-ui/ui-list
+            trash=isOrder
+            edit=(if isOrder car.id false)
+            vehicles=car.defaultImgSrc
+            label=title
+            price=car.officialGuidePrice
+            netPrice=orderInfo.carNetPrice
+            onEditClick=(action "togglePopup" "setCarNetPrice" car)
+            onTrashClick=(action "togglePopup" "deleteCar")
+          }}
+        </ul>
+      </div>
+
+      <div class="list-wrapper">
+        <div class="list-title">
+          <h3>Exterior Color</h3>
+          {{#if exteriorColor.price}}
+            <span>{{exteriorColor.price}}</span>
+          {{/if}}
+        </div>
+        <ul>
+          {{common-ui/ui-list
+            vehicles=car.carOutsideColor.defaultImgSrc
+            label=car.carOutsideColor.meaning
+          }}
+        </ul>
+      </div>
+      <div class="list-wrapper">
+        <div class="list-title">
+          <h3>Interior Color</h3>
+          {{#if interiorColor.price}}
+            <span>{{interiorColor.price}}</span>
+          {{/if}}
+        </div>
+        <ul>
+          {{common-ui/ui-list
+            vehicles=car.carInsideColor.defaultImgSrc
+            label=car.carInsideColor.meaning
+          }}
+        </ul>
+      </div>
+    {{/if}}
+
+    {{#if accessories}}
+      <div class="list-wrapper">
+        <div class="list-title">
+          <h3>Selected Options</h3>
+          {{#if isOrder}}
+            {{ui-switch
+              local-class="options"
+              size="l"
+              toggle=orderInfo.isBuyAccessory
+              onToggle=(action "toggleSwitch")
+            }}
+            {{#if orderInfo.isBuyAccessory}}
+              <span>{{orderInfo.allAccessoriesNetPrice}}</span>
+            {{/if}}
+          {{/if}}
+        </div>
+          <ul local-class={{unless isBuyAccessory "disabled"}}>
+            {{#each accessories as |accessory|}}
+              {{common-ui/ui-list
+                trash=isOrder
+                edit=(if isOrder accessory.id false)
+                spinner=isOrder
+                spinnerValue=accessory.count
+                vehicles=accessory.defaultImgSrc
+                label=accessory.fitName
+                price=accessory.costPrice
+                netPrice=accessory.netPrice
+                onEditClick=(action "togglePopup" "setAccessoryNetPrice" accessory)
+                onTrashClick=(action "togglePopup" "deleteAccessory" accessory)
+                onSpinnerInput=(action "setAccessoryCount" accessory.id)
+              }}
+            {{/each}}
+          </ul>
+      </div>
+    {{/if}}
+  </div>
+
+  <div local-class="total-wrapper" class="contents-wrapper">
+    <div local-class="total">
+      <h3>TOTAL VEHICLE PRICE<span>{{allOfficalPrice}} 元</span></h3>
+      <div local-class="net-price">
+        <h2>NET PRICE<span>{{orderInfo.netPrice}} 元</span></h2>
+      </div>
+    </div>
+    <div local-class="finance">
+      <div>
+        <div local-class="finance-title">
+          <h4>金融贷款</h4>
+          {{ui-switch
+            local-class="options"
+            size="l"
+            toggle=orderInfo.isBuyInsurance
+            onToggle=(action "toggleSwitch")
+          }}
+        </div>
+        <h1>专属贷款方案<span>另签专属贷款方案合同</span></h1>
+      </div>
+      <span>选择本项即代表同意汽车销售方提供金融贷款方案。</span>
+    </div>
+    <div local-class="finance">
+      <div>
+        <div local-class="finance-title">
+          <h4>保险代办</h4>
+          {{ui-switch
+            local-class="options"
+            size="l"
+            toggle=orderInfo.isInstallment
+            onToggle=(action "toggleSwitch")
+          }}
+        </div>
+        <h1>代办新车保险<span>另签新车保险合同</span></h1>
+      </div>
+      <span>选择本项即代表同意由汽车销售方代办新车保险。</span>
+    </div>
+  </div>
+  <div class="button-wrapper contents-wrapper">
+    {{#if isOrder}}
+      {{ui-button
+        "保存订单"
+        color="border"
+        icon="arrows-cloud-upload"
+        onClick=(action transitionToContact true)
+      }}
+
+      {{ui-button
+        "创建合同"
+        color="cadillac-red"
+        icon="files-documents"
+        onClick=(action transitionToContact false)
+      }}
+    {{else}}
+      {{#link-to 'manage.order' tagName="button" type="button" class="cadillac-red button"}}
+        返回
+      {{/link-to}}
+    {{/if}}
+  </div>
+</div>
+
+{{#ui-popup
+  isShow=isShow.deleteCar
+  size='m'
+  icon='ui-alert'
+  title='toggle publish'
+  cancelText='取消'
+  confirmText='确认'
+  color='red'
+  closePopup=(action "togglePopup" "deleteCar")
+  onClick=(action "deleteCar")
+}}
+  <p>确认删除车辆的购买信息？</p>
+{{/ui-popup}}
+
+{{#ui-popup
+  isShow=isShow.deleteAccessory
+  size='m'
+  icon='ui-alert'
+  title='toggle publish'
+  cancelText='取消'
+  confirmText='确认'
+  color='red'
+  closePopup=(action "togglePopup" "deleteAccessory")
+  onClick=(action "deleteAccessory")
+}}
+  <p>确认删除此配件？</p>
+{{/ui-popup}}
+
+{{#if isShow.setAccessoryNetPrice}}
+  {{common-ui/mobi-numpad
+    onSet=(action "updateAccessoryNetPrice")
+    onClose=(action "togglePopup" "setAccessoryNetPrice")
+  }}
+{{/if}}
+
+{{#if isShow.setCarNetPrice}}
+  {{common-ui/mobi-numpad
+    onSet=(action "updateCarNetPrice")
+    onClose=(action "togglePopup" "setCarNetPrice")
+  }}
+{{/if}}

@@ -1,0 +1,328 @@
+{{#common-ui/ui-popup
+        icon="ui-round-e-info"
+        title="POPUP"
+        cancel="Cancel"
+        confirm="Confirm"
+        color="cadillac-red"
+}}
+  <h2>We've saved your vehicle build. Please choose an option below to continue.</h2>
+  <h4>saved Sunday, December 11, 2016</h4>
+
+{{/common-ui/ui-popup}}
+<div class="w-container">
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <h3>Exterior Color</h3>
+      <ul>
+        {{common-ui/ui-list
+                check=true
+                type="checkbox"
+                info=true
+                labelId="item-11"
+                vehicles="../images/color/GC8.jpg"
+                label=(t "build.color.color-1")
+        }}
+        {{common-ui/ui-list
+                check=true
+                type="checkbox"
+                info=true
+                labelId="item-2"
+                vehicles="../images/color/GAN.jpg"
+                label=(t "build.color.color-2")
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <h3>Interior Color</h3>
+      <ul>
+        {{common-ui/ui-list
+                check=true
+                type="checkbox"
+                info=true
+                labelId="item-7"
+                vehicles="../images/color/HJT.jpg"
+                label="Jet Black, Leather Seating Surfaces"
+                price="$342"
+        }}
+        {{common-ui/ui-list
+                check=true
+                type="checkbox"
+                info=true
+                labelId="item-8"
+                vehicles="../images/color/H66.jpg"
+                label="Light Neutral with Jet Black Accents, Leather Seating Surfaces"
+                price="$342"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <h3>Wheels</h3>
+      <ul>
+        {{common-ui/ui-list
+                check=true
+                spinner=true
+                info=true
+                type="checkbox"
+                labelId="item-1"
+                vehicles="../images/exterior/RT4.jpg"
+                label=(t "build.exterior.exterior-1")
+                price="$342"
+        }}
+        {{common-ui/ui-list
+                check=true
+                spinner=true
+                info=true
+                type="checkbox"
+                labelId="item-2"
+                vehicles="../images/exterior/RT9.jpg"
+                label=(t "build.exterior.exterior-2")
+                price="$342"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>Selected Options</h3>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+                trash=true
+                edit=true
+                vehicles="../images/exterior/RT9.jpg"
+                label=(t "build.exterior.exterior-2")
+                price="$342"
+                netprice="$253"
+        }}
+        {{common-ui/ui-list
+                trash=true
+                edit=true
+                vehicles="../images/exterior/SD4.jpg"
+                label="Tire inflator"
+                price="$342"
+                netprice="$253"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>repertory accessories</h3>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+                module="repertory"
+                edit=true
+                vehicles="/images/accessories/300/2017-ct6-accessories-all-weathe-floormat-300x276.jpg"
+                accessoriesID="MSRP"
+                label="FRONT AND REAR PREMIUM CARPETED FLOOR MATS"
+                comment="Help protect the carpet of your vehicle from rain, mud, snow and other debris with these Front and Rear Premium Carpeted Floor Mats."
+                stock="100"
+                delivery="26"
+                storage="2"
+        }}
+        {{common-ui/ui-list
+                module="repertory"
+                edit=true
+                vehicles="/images/accessories/300/2017-ct6-accessories-wheel-lock-300x276.jpg"
+                accessoriesID="MSRP"
+                label="WHEEL LOCK KIT"
+                comment="Help protect the carpet of your vehicle from rain, mud, snow and other debris with these Front and Rear Premium Carpeted Floor Mats."
+                stock="100"
+                delivery="26"
+                storage="2"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>repertory vehicles</h3>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+                module="repertory"
+                edit=true
+                delivery=true
+                vehicles="/images/sedans/2017-ct6-jellybean-200x123.png"
+                vehiclesID="ID001"
+                vin="IIYIURy-3789-UIY"
+                label="RWD 2.0L TURBO ENGINE CT6"
+                comment="HID headlamps/Adaptive Forward Lighting/LED vertical light signatures"
+        }}
+        {{common-ui/ui-list
+                module="repertory"
+                edit=true
+                delivery=true
+                vehicles="/images/sedans/2017-ct6-jellybean-200x123.png"
+                vehiclesID="ID001"
+                vin="IIYIURy-3789-UIY"
+                label="RWD 2.0L TURBO ENGINE CT6"
+                comment="HID headlamps/Adaptive Forward Lighting/LED vertical light signatures"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper-column">
+      <div class="list-wrapper">
+        <h3>Vehicles</h3>
+        <ul>
+          {{common-ui/ui-list
+                  module="repertory"
+                  check=true
+                  type="checkbox"
+                  slide="swiper-disabled"
+                  labelId="item-31"
+                  vehicles="/images/sedans/2016-escalade-jellybean-200x123.png"
+                  label="Escalade"
+          }}
+          {{common-ui/ui-list
+                  module="repertory"
+                  check=true
+                  type="checkbox"
+                  slide="swiper-disabled"
+                  labelId="item-32"
+                  vehicles="/images/sedans/2017-ats-sedan-jellybean-200x123.png"
+                  label="ATS"
+                  tag="ATS"
+                  tagTrims="ALL"
+          }}
+        </ul>
+      </div>
+      <div class="list-wrapper">
+        <h3>TRIMS</h3>
+        <ul>
+          {{common-ui/ui-list
+                  check=true
+                  type="checkbox"
+                  slide="swiper-disabled"
+                  labelId="item-57"
+                  label="ALL TRIMS"
+          }}
+          {{common-ui/ui-list
+                  check=true
+                  type="checkbox"
+                  slide="swiper-disabled"
+                  labelId="item-58"
+                  label="LUXURY"
+          }}
+        </ul>
+      </div>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>client</h3>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+                chat=true
+                prices=true
+                notification=true
+                status="active"
+                sales="../images/DefaultProfile.png"
+                client="Wester"
+                phone="13917777990"
+                appointment="2017-02-12"
+                sedans="RWD 2.0L TURBO ENGINE CT6"
+        }}
+        {{common-ui/ui-list
+                chat=true
+                prices=true
+                notification=true
+                sales="../images/DefaultProfile.png"
+                client="Wester"
+                phone="13917777990"
+                appointment="2017-02-12"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>order</h3>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+                preview=true
+                notification=true
+                status="active"
+                vehicles="../images/sedans/2017-ct6-jellybean-200x123.png"
+                label="RWD 2.0L TURBO ENGINE CT6"
+                serial="ADS-2309486"
+                price="$342"
+                netPrice="$253"
+        }}
+        {{common-ui/ui-list
+                preview=true
+                notification=true
+                vehicles="../images/sedans/2016-escalade-jellybean-200x123.png"
+                label="2016 ESCALADE JELLYBEA"
+                serial="ADS-2309486"
+                price="$342"
+                netPrice="$253"
+                disabled="disabled"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>finance</h3>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+                module="finance"
+                setting=true
+                preview=true
+                finance=true
+                sales="../images/DefaultProfile.png"
+                vehicles="../images/sedans/2017-ct6-jellybean-200x123.png"
+                label="RWD 2.0L TURBO ENGINE CT6"
+                serial="ADS-2309486"
+                contact="Wester"
+                tel="13917777990"
+                mail="wester@cform.io"
+                schedule="part1"
+        }}
+        {{common-ui/ui-list
+                module="finance"
+                setting=true
+                preview=true
+                finance=true
+                sales="../images/DefaultProfile.png"
+                vehicles="../images/sedans/2017-ats-sedan-jellybean-200x123.png"
+                label="RWD 2.0L TURBO ENGINE CT6"
+                serial="ADS-2309486"
+                contact="Wester"
+                tel="13917777990"
+                disabled="disabled"
+                schedule="part2"
+        }}
+      </ul>
+    </div>
+    <div class="list-wrapper">
+      <div class="list-title">
+        <h3>price</h3>
+      </div>
+      <ul>
+        {{common-ui/ui-list
+                module="price"
+                edit=true
+                trash=true
+                info=true
+                warehouse="2016-03-14"
+                costPrice="$46,000"
+                specialPrice="$50,495"
+                standardPrice="$53,495"
+                salePrice="$52,495"
+                vehicles="/images/sedans/2017-ct6-jellybean-200x123.png"
+                vehiclesID="ID001"
+                vin="IIYIURy-3789-UIY"
+                label="RWD 2.0L TURBO ENGINE CT6"
+                tag="CT6"
+                tagTrims="PREMIUM LUXURY"
+        }}
+        {{price-page/price-menu}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+

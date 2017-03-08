@@ -1,0 +1,31 @@
+@value ui-white, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, cadillac-red from 'ui-colors';
+
+:global(.trims-container) {
+  position: relative;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  & :global(.swiper-wrapper) {
+    align-items: stretch;
+    & :global(.swiper-slide) {
+      display: flex;
+      height: auto;
+      align-items: stretch;
+      & > div {
+
+      }
+    }
+  }
+  & + :global(.next-button-wrapper) {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+:global(.trims-pagination) {
+  & span {
+    &:only-child {
+      display: none;
+    }
+  }
+}
+

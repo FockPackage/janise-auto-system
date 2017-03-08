@@ -1,0 +1,105 @@
+{{#common-ui/mobi-listview mobiConfig=mobiConfig}}
+  {{#each orderInfo.carTypes as |carType|}}
+    <li data-id={{carType.id}} data-step="carType">
+      <img src={{carType.defaultImgSrc}} /> {{carType.meaning}}
+
+      <ul>
+        {{#each carType.carConfigs as |carConfig|}}
+          <li data-id={{carConfig.id}} data-step="carConfig">
+            <img src={{carType.defaultImgSrc}} /> {{carConfig.meaning}}
+
+            <ul>
+              {{#each carConfig.exteriorColors as |exteriorColor|}}
+                <li data-id={{exteriorColor.id}} data-step="exteriorColor">
+                  <img src={{exteriorColor.defaultImgSrc}} /> {{exteriorColor.meaning}}
+
+                  <ul>
+                    {{#each exteriorColor.interiorColors as |interiorColor|}}
+                      <li data-id={{interiorColor.carId}} data-step="car">
+                        <img src={{interiorColor.defaultImgSrc}} /> {{interiorColor.meaning}}
+
+                        <ul>
+                          <li data-id="1" data-step="accessory">
+                            <span class="md-continent micons icon-north-america"> </span> 外部配件
+
+                            <ul>
+                              {{#if isSelectedCar}}
+                                {{#common-ui/mobi-listview class="md-lv-checklist" mobiConfig=mobiConfig}}
+                                 {{#each orderInfo.exteriorAccessories as |accessory|}}
+                                   <li data-id={{accessory.id}} data-step="exteriorAccessory">
+                                     <input type="checkbox" data-role="none" />
+                                     <span class="md-continent micons icon-north-america"> </span> {{accessory.fitName}}
+                                   </li>
+                                 {{/each}}
+                               {{/common-ui/mobi-listview}}
+                              {{/if}}
+                            </ul>
+                          </li>
+
+                          <li data-id="2" data-step="accessory">
+                            <span class="md-continent micons icon-north-america"> </span> 内部配件
+
+                            <ul>
+                              {{#if isSelectedCar}}
+                                {{#common-ui/mobi-listview class="md-lv-checklist" mobiConfig=mobiConfig}}
+                                 {{#each orderInfo.interiorAccessories as |accessory|}}
+                                   <li data-id={{accessory.id}} data-step="interiorAccessory">
+                                     <input type="checkbox" data-role="none" />
+                                     <span class="md-continent micons icon-north-america"> </span> {{accessory.fitName}}
+                                   </li>
+                                 {{/each}}
+                               {{/common-ui/mobi-listview}}
+                              {{/if}}
+                            </ul>
+                          </li>
+
+                          <li data-id="3" data-step="accessory">
+                            <span class="md-continent micons icon-north-america"> </span> 4S店
+
+                            <ul>
+                              {{#if isSelectedCar}}
+                                {{#common-ui/mobi-listview class="md-lv-checklist" mobiConfig=mobiConfig}}
+                                 {{#each orderInfo.carAccessories as |accessory|}}
+                                   <li data-id={{accessory.id}} data-step="carAccessory">
+                                     <input type="checkbox" data-role="none" />
+                                     <span class="md-continent micons icon-north-america"> </span> {{accessory.fitName}}
+                                   </li>
+                                 {{/each}}
+                               {{/common-ui/mobi-listview}}
+                              {{/if}}
+                            </ul>
+                          </li>
+
+                          <li data-id="4" data-step="accessory">
+                            <span class="md-continent micons icon-north-america"> </span> 通用配件
+
+                            <ul>
+                              {{#if isSelectedCar}}
+                                {{#common-ui/mobi-listview class="md-lv-checklist"}}
+                                 {{!-- {{#each orderInfo.generalAccessories as |accessory|}}
+                                   <li>
+                                     <input type="checkbox" data-role="none" />
+                                     <span class="md-continent micons icon-north-america"> </span> {{accessory.fitName}}
+                                   </li>
+                                 {{/each}} --}}
+                               {{/common-ui/mobi-listview}}
+                              {{/if}}
+                            </ul>
+                          </li>
+
+                          <div class="mbsc-btn-group" mbsc-enhance>
+                            <button class="mbsc-btn-block" onclick={{goToSummary}}>继续</button>
+                          </div>
+                        </ul>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+            </ul>
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+{{/common-ui/mobi-listview}}

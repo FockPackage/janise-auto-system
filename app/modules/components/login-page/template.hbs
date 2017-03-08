@@ -1,0 +1,28 @@
+<div class="md-logo micons icon-mbsc-logo"></div>
+<div class="mbsc-form-group-inset">
+  <label>
+    {{input
+      id="username"
+      type="text"
+      name="username"
+      placeholder="enter username"
+      value=formValue.username
+    }}
+  </label>
+  <label>
+    {{input
+      type="password"
+      name="password"
+      placeholder="enter password"
+      value=formValue.password
+      enter=(action login formValue)
+    }}
+  </label>
+</div>
+<div class="mbsc-form-group-inset">
+  <a href="" class="md-login-link md-singnup-link" data-isLogin="true">Don't have an account yet? Sign up.</a>
+  <a href="" class="md-login-link" data-isLogin="true">Forgot password?</a>
+  <div class="mbsc-padding">
+    <button class="mbsc-btn-block md-sg-btn" onclick={{action login formValue}}>登录</button>
+  </div>
+</div>

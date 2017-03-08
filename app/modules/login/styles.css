@@ -1,0 +1,94 @@
+@value ui-white, ui-purple, ui-blue, ui-green, ui-tomato, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, ui-dark-slate from 'ui-colors';
+
+:global(.center-wrapper) {
+  position: absolute 0 0 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  @media (max-width: 479px) {
+    display: block;
+  }
+}
+
+:global(.main-container) {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .2), rgba(0, 0, 0, 0) 0 0 0, rgba(0, 0, 0, 0) 0 0 0;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+  @media (max-width: 767px) and (min-width: 479px) {
+    max-width: 400px;
+  }
+  @media (max-width: 479px) {
+    height: 100vh;
+  }
+
+  & > a {
+    position: absolute 0 0 auto auto;
+    z-index: 12;
+  }
+}
+
+:global(.modal) {
+  position: relative;
+  color: ui-gray;
+  width: 380px;
+  background-color: ui-white;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 479px) {
+    height: 70vh;
+  }
+
+  & h4 {
+    text-align: center;
+    color: ui-silver;
+  }
+}
+
+:global(.modal-container) {
+  padding: 24px;
+  overflow: hidden;
+  @media (max-width: 479px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+:global(.login-button) {
+  padding: 12px;
+  width: 100%;
+  margin-top: 12px;
+  font-size: 16px;
+  @media (max-width: 479px) {
+    margin-top: auto;
+  }
+}
+
+:global(.forgot-password) {
+  color: ui-blue;
+  font-size: 13px;
+  align-self: center;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 479px) {
+    align-self: flex-start;
+  }
+}
+
+.brand {
+  padding: 8px;
+  width: 50%;
+  margin: 0 auto;
+}

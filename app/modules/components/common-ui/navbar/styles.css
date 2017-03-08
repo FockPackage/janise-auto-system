@@ -1,0 +1,31 @@
+@value ui-white, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, cadillac-red from 'ui-colors';
+
+.navbar-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  & a {
+    margin-right: 1rem;
+    & img {
+      height: 1.5rem;
+    }
+  }
+  & > span {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  & :global(.ember-basic-dropdown-trigger) {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+}
+
+:global(html.mobile) {
+  & .navbar-main {
+    & > span {
+      font-size: x-small;
+      line-height: normal;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="md-groupsort">
+  {{#common-ui/mobi-listview mobiConfig=mobiConfig}}
+    {{#each unreadOrders as |order|}}
+      <li data-id={{order.id}}>
+        <img src={{order.carRelation.defaultImgSrc}} /> {{order.label}}
+        <p>订单编号： {{order.orderCode}}</p>
+        <p>客户姓名： {{order.custom.customName}}</p>
+        <p>手机号： {{order.custom.mobile}}</p>
+      </li>
+    {{else}}
+      <p>搜索内容为空</p>
+    {{/each}}
+
+    {{#each dateOrders as |dateOrder|}}
+      <li data-role="list-divider">{{dateOrder.date}}</li>
+      {{#common-ui/mobi-listview}}
+        {{#each dateOrder.orders as |order|}}
+          <li data-id={{order.id}}>
+            <img src={{order.carRelation.defaultImgSrc}} /> {{order.label}}
+            <p>订单编号： {{order.orderCode}}</p>
+            <p>客户姓名： {{order.custom.customName}}</p>
+            <p>手机号： {{order.custom.mobile}}</p>
+
+            <ul></ul>
+          </li>
+        {{/each}}
+      {{/common-ui/mobi-listview}}
+    {{/each}}
+  {{/common-ui/mobi-listview}}
+</div>
+
+<div class="button-wrapper contents-wrapper">
+  {{#link-to 'sales' tagName="button" type="button" class="cadillac-red button"}}
+    {{ui-icon icon="ui-simple-add"}} Create New
+  {{/link-to}}
+</div>

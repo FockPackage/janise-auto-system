@@ -1,0 +1,27 @@
+{{repertory-page/vehicles
+  vehicles=model.vehicles
+  searchTypes=model.searchTypes
+  currentSearchType=model.currentSearchType
+  changeSearchType=(route-action "changeSearchType")
+  searchVehicles=(route-action "searchVehicles")
+  goTo=(route-action "goTo")
+  toggleCanSell=(route-action "toggleCanSell")
+  toggleStore=(route-action "toggleStore")
+  updatePrice=(route-action "updatePrice")
+  deliveryCar=(route-action "deliveryCar")
+}}
+
+{{#ui-popup
+  isShow=model.isShow.carIdentify
+  size='m'
+  icon='ui-alert'
+  title='price'
+  cancelText='取消'
+  confirmText='确认'
+  color='cadillac-red'
+  closePopup=(route-action "getAccessories")
+  onClick=(route-action "none")
+}}
+  <p>出库成功！</p>
+  <p>车辆识别码：{{model.carIdentify}}</p>
+{{/ui-popup}}

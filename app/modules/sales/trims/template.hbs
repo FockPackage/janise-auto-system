@@ -1,0 +1,10 @@
+{{common-ui/vehicles-slide
+  vehicles=orderInfo.carTypes
+  selectedVehicle=orderInfo.selected.carTypeId
+  toggleSelectVehicle=(route-action "toggleCarType")
+}}
+{{sales-page/build/trims
+  cars=cars
+  selectedConfigId=orderInfo.selected.configId
+  toggleConfig=(route-action "toggleConfig")
+}}

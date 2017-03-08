@@ -1,0 +1,80 @@
+{{#common-ui/mobi-listview}}
+<div mbsc-enhance>
+  <div class="mbsc-form-group">
+    <div class="mbsc-form-group-title">客户信息</div>
+
+    <label>
+      {{input
+        data-icon="user4"
+        placeholder="姓名"
+        value=formValue.name
+      }}
+    </label>
+    <label>
+      {{input
+        data-icon="phone"
+        type="tel"
+        placeholder="电话号码"
+        value=formValue.mobile
+        focus-out=(action "searchClient")
+      }}
+    </label>
+    <label>
+      {{input
+        data-icon="ion-ios7-email"
+        type="email"
+        placeholder="邮箱"
+        value=formValue.email
+      }}
+    </label>
+    <label>
+      {{input
+        data-icon="office"
+        placeholder="公司"
+        value=formValue.company
+      }}
+    </label>
+    <label>
+      {{input
+        data-icon="location"
+        placeholder="家庭住址"
+        value=formValue.address
+      }}
+    </label>
+
+    <label>
+      {{input
+        data-icon="location"
+        placeholder="邮政编码"
+        value=formValue.postal
+      }}
+    </label>
+
+    <label>
+      {{textarea
+        data-icon="line-note"
+        placeholder="备注信息"
+        value=formValue.description
+      }}
+    </label>
+  </div>
+
+  <div class="mbsc-form-group">
+    <label>
+      直接创建为合同?
+      {{input
+        type="checkbox"
+        checked=formValue.isCreateFinance
+      }}
+    </label>
+
+    {{#if formValue.isCreateFinance}}
+      {{common-ui/mobi-calendar onSetDate=(action "setDeliveryDate") date=formValue.depositDate}}
+    {{/if}}
+  </div>
+
+  <div class="mbsc-form-group">
+    <button class="mbsc-btn-block" onclick={{action "createOrUpdateOrderInfo"}}>立即创建</button>
+  </div>
+</div>
+{{/common-ui/mobi-listview}}

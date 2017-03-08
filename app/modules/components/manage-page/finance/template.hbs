@@ -1,0 +1,66 @@
+<div local-class="finance-manage">
+  <h2>Finance Manage</h2>
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <div class="list-title">
+        {{common-ui/search-input currentSearchType=currentSearchType onSearch=searchFinance}}
+        {{common-ui/search-type-menu
+          class="menu"
+          searchTypes=searchTypes
+          currentSearchType=currentSearchType
+          changeSearchType=changeSearchType
+        }}
+      </div>
+    </div>
+
+    <div class="list-wrapper">
+      <div class="list-title">
+        <span>2017-02-05</span>
+      </div>
+      <ul>
+        {{#each otherFinances as |finance|}}
+          {{common-ui/ui-list
+            module="finance"
+            setting=(concat "setting-" finance.id)
+            finance=true
+            sales="../images/DefaultProfile.png"
+            vehicles=finance.carRelation.defaultImgSrc
+            label=finance.label
+            tag=finance.carRelation.carType.meaning
+            tagTrims=finance.carRelation.carConfig.meaning
+            serial=(concat "合同编号：" finance.orderCode)
+            vin=finance.carIndentify
+            contact=finance.custom.customName
+            mail=finance.custom.email
+            tel=finance.custom.mobile
+            schedule=finance.schedule
+            onPreviewClick=(action openPreview finance)
+            onSettingClick=(action "openPopup" finance)
+          }}
+        {{else}}
+          <p>搜索内容为空</p>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{#if isShow.setDeposit}}
+  {{common-ui/mobi-numpad onSet=(action "setDeposit") onClose=(action "closeSetDepositPopup")}}
+{{/if}}
+
+{{#ui-popup
+  isShow=isShow.paymentComfirm
+  size='m'
+  icon='ui-alert'
+  title='price'
+  cancelText='取消'
+  confirmText='确认'
+  color='cadillac-red'
+  closePopup=(action "closePaymentComfirmPopup")
+  onClick=(action "paymentComfirm")
+}}
+  <p>合同总价: {{price.total}}</p>
+  <p>已付定金: {{currentFinance.deposit}}</p>
+  <p>本次已付尾款: {{price.finalPayment}}</p>
+{{/ui-popup}}

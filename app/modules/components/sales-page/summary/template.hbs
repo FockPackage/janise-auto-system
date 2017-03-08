@@ -1,0 +1,56 @@
+<div class="md-groupsort">
+  {{#common-ui/mobi-listview mobiConfig=mobiConfig}}
+    <li data-role="list-divider">车：</li>
+    <li>
+      <img src={{car.defaultImgSrc}} /> {{car.label}}
+      <ul>
+        <div class="mbsc-form-group" mbsc-enhance>
+          <div class="mbsc-form-group-title">价格：</div>
+          <div>
+              <label for="salePrice">销售价：</label>
+              <span class="mbsc-desc">官方指导价：{{car.officialGuidePrice}}</span>
+              <input id="salePrice" type="number" data-role="stepper" min="0" value={{orderInfo.carNetPrice}} step="1000" max="10000000000" />
+              {{common-ui/mobi-numpad
+                hasPrefix=true
+                bindId="#salePrice"
+                value=orderInfo.carNetPrice
+                onSet=(action "updateCarNetPrice")
+              }}
+          </div>
+        </div>
+      </ul>
+    </li>
+
+    <li data-role="list-divider">外饰颜色：</li>
+    <li>
+      <img src={{car.carOutsideColor.defaultImgSrc}} /> {{car.carOutsideColor.meaning}}
+    </li>
+
+    <li data-role="list-divider">内饰颜色：</li>
+    <li>
+      <img src={{car.carInsideColor.defaultImgSrc}} /> {{car.carInsideColor.meaning}}
+    </li>
+
+    <li data-role="list-divider">全部配件：</li>
+    {{#each accessories as |accessory|}}
+      <li>
+        <img src={{accessory.defaultImgSrc}} /> {{accessory.fitName}}
+
+        <ul>
+          {{sales-page/summary/accessory
+            accessoryId=accessory.id
+            salePrice=accessory.salePrice
+            netPrice=accessory.netPrice
+            count=accessory.count
+            updateAccessoryNetPrice=(action "updateAccessoryNetPrice" accessory.id)
+            updateAccessoryCount=(action "updateAccessoryCount" accessory.id)
+          }}
+        </ul>
+      </li>
+    {{/each}}
+
+    <div class="mbsc-btn-group" mbsc-enhance>
+      <button class="mbsc-btn-block" onclick={{goToContact}}>继续</button>
+    </div>
+  {{/common-ui/mobi-listview}}
+</div>

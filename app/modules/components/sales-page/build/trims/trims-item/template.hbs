@@ -1,0 +1,22 @@
+<input
+  local-class="trims-group-input"
+  type={{type}}
+  id={{forId}}
+  onclick={{action toggleConfig car.carConfig.id}}
+  checked={{eq car.carConfig.id selectedConfigId}}
+>
+<img src={{car.defaultImgSrc}} alt="">
+<h3>{{title}}</h3>
+<span>{{car.carSummary1}}</span>
+<p>{{car.carSummary2}}</p>
+
+<p>{{car.carDisplace.meaning}}</p>
+
+<ul local-class="features">
+  {{#each features as |item|}}
+    <li>{{item}}</li>
+  {{/each}}
+</ul>
+<label for={{forId}} data-active={{if car.selected 'active' 'un-active'}}>
+  <span>{{t "build.trims.trim"}}</span>
+</label>

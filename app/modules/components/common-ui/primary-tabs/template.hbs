@@ -1,0 +1,19 @@
+<div class="tabs tabs-style">
+  <nav>
+    <ul>
+      {{#each computedTabList as |tab|}}
+        <li class={{if tab.isCurrentRoute 'current'}}>
+          {{#if routeParamsId}}
+            {{#link-to tab.routeName routeParamsId}}
+              <span>{{t tab.text}}</span>
+            {{/link-to}}
+          {{else}}
+            {{#link-to tab.routeName}}
+              <span>{{t tab.text}}</span>
+            {{/link-to}}
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </nav>
+</div>

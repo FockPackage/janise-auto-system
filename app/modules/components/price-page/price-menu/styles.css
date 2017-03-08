@@ -1,0 +1,23 @@
+@value ui-white, ui-blue, ui-purple, ui-green, ui-light, ui-fade-silver, ui-silver, ui-gray, ui-slate, cadillac-red from 'ui-colors';
+
+:global(.price-setup) {
+  & :global(.mbsc-mobiscroll.mbsc-form) {
+    background: ui-white;
+    color: ui-slate;
+    & :global(.mbsc-slider-handle) {
+      background-color: ui-blue;
+    }
+    & :global(.mbsc-slider-tooltip) {
+      background-color: ui-green;
+    }
+  }
+}
+
+.button-wrapper {
+  padding: 1rem;
+  & button {
+    &:last-of-type {
+      float: right;
+    }
+  }
+}

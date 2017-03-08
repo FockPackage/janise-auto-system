@@ -1,0 +1,12 @@
+{{#ui-fieldset size="s"  as |f|}}
+  {{#each td.value as |radio|}}
+    {{f.radio
+      name='radio'
+      radioId=radio.id
+      label=radio.label
+      value= radio.id
+      currentValue=radioValue
+      onChange=(action changeRadioValue radio.id)
+    }}
+  {{/each}}
+{{/ui-fieldset}}

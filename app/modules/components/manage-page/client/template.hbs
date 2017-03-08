@@ -1,0 +1,66 @@
+<div local-class="client-manage">
+  <h2>Client Manage</h2>
+  <div class="list-contents">
+    <div class="list-wrapper">
+      <div class="list-title">
+        {{common-ui/search-input currentSearchType=currentSearchType onSearch=searchClient}}
+        {{common-ui/search-type-menu
+          class="menu"
+          searchTypes=searchTypes
+          currentSearchType=currentSearchType
+          changeSearchType=changeSearchType
+        }}
+      </div>
+      {{!-- <ul>
+        {{common-ui/ui-list
+          chat=true
+          prices=true
+          notification=true
+          status="active"
+          sales="../images/DefaultProfile.png"
+          client="Wester"
+          phone="13917777990"
+          appointment="2017-02-12"
+          sedans="RWD 2.0L TURBO ENGINE CT6"
+        }}
+        {{common-ui/ui-list
+          chat=true
+          prices=true
+          notification=true
+          sales="../images/DefaultProfile.png"
+          client="Wester"
+          phone="13917777990"
+          appointment="2017-02-12"
+        }}
+        {{common-ui/ui-list
+          chat=true
+          prices=true
+          notification=true
+          sales="../images/DefaultProfile.png"
+          client="Wester"
+          phone="13917777990"
+          appointment="2017-02-12"
+        }}
+      </ul> --}}
+    </div>
+
+    <div class="list-wrapper">
+      {{!-- <div class="list-title">
+        <span>2017-02-05</span>
+      </div> --}}
+      <ul>
+        {{#each clients as |client|}}
+          {{common-ui/ui-list
+            chat=true
+            prices=true
+            sales="../images/DefaultProfile.png"
+            client=client.customName
+            phone=client.mobile
+            email=client.email
+            address=client.address
+          }}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

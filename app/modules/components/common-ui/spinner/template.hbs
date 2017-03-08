@@ -1,0 +1,34 @@
+{{labelContent}}
+
+<div class="inner-wrapper">
+  {{input
+    type="number"
+    disabled=disabled
+    form=form
+    id=fieldId
+    min=min
+    max=max
+    name=name
+    readonly=readonly
+    required=required
+    step=step
+    tabindex=tabindex
+    value=value
+    input=onInput
+  }}
+  <a class="increase" onclick={{action "increase"}}>
+    <svg width="34" height="34" viewBox="0 0 34 34">
+      <path transform="translate(12, 12)" d="M9.5 4h-3.5v-3.5c0-.276-.224-.5-.5-.5h-1c-.276 0-.5.224-.5.5v3.5h-3.5c-.276 0-.5.224-.5.5v1c0 .276.224.5.5.5h3.5v3.5c0 .276.224.5.5.5h1c.276 0 .5-.224.5-.5v-3.5h3.5c.276 0 .5-.224.5-.5v-1c0-.276-.224-.5-.5-.5z"/>
+    </svg>
+  </a>
+
+  <a class="decrease" onclick={{action "decrease"}}>
+    <svg width="34" height="34" viewBox="0 0 34 34">
+      <path transform="translate(11, 16)" d="M11.5 2h-11c-.276 0-.5-.224-.5-.5v-1c0-.276.224-.5.5-.5h11c.276 0 .5.224.5.5v1c0 .276-.224.5-.5.5z" fill-rule="evenodd" clip-rule="evenodd"/>
+    </svg>
+  </a>
+
+  {{unitContent}}
+</div>
+
+{{errorContent}}

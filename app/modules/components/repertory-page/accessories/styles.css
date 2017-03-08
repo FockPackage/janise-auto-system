@@ -1,0 +1,8 @@
+@value ui-white, ui-light, ui-fade-silver, ui-silver, cadillac-red from 'ui-colors';
+
+.accessories-repertory {
+  padding-top: 2rem;
+  & > h2 {
+    margin-bottom: 2rem;
+  }
+}

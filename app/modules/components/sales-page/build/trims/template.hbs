@@ -1,0 +1,16 @@
+<div class="trims-container">
+  <div class="swiper-wrapper">
+    {{#each cars as |car|}}
+      <div class="swiper-slide trims-group-item">
+        {{sales-page/build/trims/trims-item
+          car=car
+          tagName=""
+          type='radio'
+          selectedConfigId=selectedConfigId
+          toggleConfig=toggleConfig
+         }}
+      </div>
+    {{/each}}
+  </div>
+  <div class="swiper-pagination trims-pagination"></div>
+</div>

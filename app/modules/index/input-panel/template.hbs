@@ -1,0 +1,17 @@
+{{#if (eq td.inputId currentEdit.id)}}
+  <td colspan={{td.Colspan}} rowspan={{td.Rowspan}}>
+    {{input
+      id='currentEdit'
+      value=currentEdit.value
+      focus-out=(action focusInput -1)
+    }}
+  </td>
+{{else}}
+  <td
+    colspan={{td.colSpan}}
+    rowspan={{td.rowSpan}}
+    onclick={{action focusInput td.inputId td.value}}
+  >
+    {{td.value}}
+  </td>
+{{/if}}
